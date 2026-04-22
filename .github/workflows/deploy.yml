@@ -4,12 +4,14 @@ on:
   push:
     branches: [main]
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: write
 
     steps:
       - uses: actions/checkout@v4
@@ -21,7 +23,13 @@ jobs:
       - run: npm install
       - run: npm run build
 
-      - uses: peaceiris/actions-gh-pages@v4
+      - uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
+          path: ./out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/deploy-pages@v4
