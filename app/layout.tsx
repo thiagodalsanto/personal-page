@@ -3,48 +3,16 @@ import { Inter } from "@next/font/google";
 import LocalFont from "@next/font/local";
 import { Metadata } from "next";
 import { Analytics } from "./components/analytics";
+import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: {
     default: "Thiago Dal Santo - Portfolio",
-    template: "%s | chronark.com",
+    template: "%s | Thiago Dal Santo",
   },
   description: "Web & Mobile Developer with 4+ years of experience",
-  openGraph: {
-    title: "Thiago Dal Santo - Portfolio",
-    description:
-      "Web & Mobile Developer with 4+ years of experience",
-    url: "https://chronark.com",
-    siteName: "Thiago Dal Santo - Portfolio",
-    images: [
-      {
-        url: "https://chronark.com/og.png",
-        width: 1920,
-        height: 1080,
-      },
-    ],
-    locale: "en-US",
-    type: "website",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  twitter: {
-    title: "Chronark",
-    card: "summary_large_image",
-  },
-  icons: {
-    shortcut: "/favicon.png",
-  },
 };
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -65,11 +33,9 @@ export default function RootLayout({
       <head>
         <Analytics />
       </head>
-      <body
-        className={`bg-black ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined
-          }`}
-      >
-        {children}
+
+      <body className="bg-white dark:bg-black">
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
