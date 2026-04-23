@@ -1,0 +1,48 @@
+export const pt = {
+  nav: {
+    about: "Sobre",
+    experience: "Experiência",
+    contact: "Contato",
+  },
+  hero: {
+    role: "Web & Mobile Developer",
+  },
+  about: {
+    title: "Sobre",
+    text1: "Engenheiro de Software especializado em desenvolvimento Web com React, Next.js e Angular, também com experiência em desenvolvimento Mobile usando Flutter, construindo aplicações escaláveis em ambientes corporativos e financeiros.",
+    text2: "Tenho sólida experiência no desenvolvimento de aplicações web modernas e plataformas internas suportadas por AWS e GCP. Meu foco está em arquitetura limpa, performance e construção de sistemas front-end escaláveis e de fácil manutenção, com forte atenção à UX e confiabilidade.",
+    text3: "Bacharelado em Ciência da Computação (UTFPR) e Mestrado em Engenharia de Software (IPS, previsão para maio de 2026).",
+    card1_text1: "Experiência",
+    card1_text2: "4+ anos",
+    card2_text1: "Foco",
+    card2_text2: "Web • Mobile • UX",
+    card3_text1: "Stack",
+    card3_text2: "Next.js • React • Angular • Flutter",
+  },
+  experience: {
+    title: "Experiência",
+    card1_title: "Software Engineer",
+    card1_company: "Stellantis Financial Services Brazil",
+    card1_start_end: "Out 2024 - Fev 2026",
+    card1_duration: "1 ano e 6 meses",
+    card1_description: "Trabalhei em duas principais iniciativas em um ambiente de serviços financeiros: uma iniciativa de curto prazo focada em segurança de aplicações e modernização de sistemas legados (3 meses), e uma iniciativa de longo prazo voltada para infraestrutura de dados e engenharia de ETL. O foco foi melhorar a segurança, confiabilidade, escalabilidade e eficiência operacional dos sistemas e plataformas de dados.",
+    card2_title: "Web Developer",
+    card2_company: "Silicon Village",
+    card2_start_end: "Dez 2023 - Fev 2026",
+    card2_duration: "2 anos e 3 meses",
+    card2_description: "Desenvolvimento de plataformas internas de gestão de RH com arquitetura serverless baseada em Firebase e Google Cloud Platform (GCP), com foco em automação de processos, escalabilidade e melhoria dos fluxos internos.",
+    card3_title: "Mobile Developer",
+    card3_company: "Silicon Village",
+    card3_start_end: "Dez 2023 - Fev 2026",
+    card3_duration: "2 anos e 3 meses",
+    card3_description: "Desenvolvimento de aplicações mobile multiplataforma utilizando Flutter, seguindo arquitetura MVVM e utilizando Firebase e GCP para entregar soluções escaláveis e de alta performance para gestão de equipes.",
+    card4_title: "Mobile Developer",
+    card4_company: "AsapTech",
+    card4_start_end: "Dez 2023 - Jun 2024",
+    card4_duration: "7 meses",
+    card4_description: "Contribuí para o desenvolvimento de um aplicativo mobile de banco digital focado em pagamentos e operações financeiras em tempo real. Construído com Flutter e arquitetura modular e escalável, integrando APIs GraphQL e serviços bancários externos (Qi-Tech), garantindo performance, confiabilidade e uma experiência de usuário fluida.",
+  },
+  contact: {
+    designed: "Projetado e desenvolvido com Next.js e Tailwind CSS.",
+  }
+};

@@ -1,0 +1,48 @@
+export const zh = {
+  nav: {
+    about: "关于",
+    experience: "经历",
+    contact: "联系",
+  },
+  hero: {
+    role: "Web & Mobile Developer",
+  },
+  about: {
+    title: "关于",
+    text1: "软件工程师，专注于使用 React、Next.js 和 Angular 进行 Web 开发，同时也有使用 Flutter 进行移动端开发的经验，在企业和金融环境中构建可扩展的应用程序。",
+    text2: "我在开发现代 Web 应用程序和基于 AWS 与 GCP 支持的内部平台方面拥有丰富经验。我的重点是清晰架构、性能优化，以及构建可扩展、易维护且具有良好用户体验与高可靠性的前端系统。",
+    text3: "计算机科学学士（UTFPR）以及软件工程硕士（IPS，预计 2026 年 5 月毕业）。",
+    card1_text1: "经验",
+    card1_text2: "4年以上",
+    card2_text1: "专注方向",
+    card2_text2: "Web • Mobile • UX",
+    card3_text1: "技术栈",
+    card3_text2: "Next.js • React • Angular • Flutter",
+  },
+  experience: {
+    title: "经历",
+    card1_title: "软件工程师",
+    card1_company: "Stellantis 金融服务巴西",
+    card1_start_end: "2024年10月 - 2026年2月",
+    card1_duration: "1年6个月",
+    card1_description: "在金融服务环境中参与两个主要项目：一个为期3个月的短期应用安全与遗留系统现代化项目，以及一个长期的数据基础设施与 ETL 工程项目。重点是提升系统安全性、可靠性、可扩展性以及软件与数据平台的运营效率。",
+    card2_title: "Web 开发工程师",
+    card2_company: "Silicon Village",
+    card2_start_end: "2023年12月 - 2026年2月",
+    card2_duration: "2年3个月",
+    card2_description: "使用 Firebase 和 Google Cloud Platform（GCP）构建无服务器架构的内部人力资源管理平台，专注于流程自动化、可扩展性以及内部工作流优化。",
+    card3_title: "移动端开发工程师",
+    card3_company: "Silicon Village",
+    card3_start_end: "2023年12月 - 2026年2月",
+    card3_duration: "2年3个月",
+    card3_description: "使用 Flutter 开发跨平台移动应用，遵循 MVVM 架构，并结合 Firebase 和 GCP，为人力资源管理提供可扩展、高性能的解决方案。",
+    card4_title: "移动端开发工程师",
+    card4_company: "AsapTech",
+    card4_start_end: "2023年12月 - 2024年6月",
+    card4_duration: "7个月",
+    card4_description: "参与开发一款专注于支付与实时金融操作的数字银行移动应用。使用 Flutter 构建模块化、可扩展架构，集成 GraphQL API 与第三方银行服务（Qi-Tech），确保性能、可靠性以及流畅的用户体验。",
+  },
+  contact: {
+    designed: "使用 Next.js 和 Tailwind CSS 设计与开发。",
+  }
+};
