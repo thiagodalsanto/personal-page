@@ -1,7 +1,7 @@
-import { en } from "./en";
-import { pt } from "./pt";
-import { zh } from "./zh";
-import { es } from "./es";
+import { en } from "./translations/en";
+import { pt } from "./translations/pt";
+import { zh } from "./translations/zh";
+import { es } from "./translations/es";
 
 export type Lang = "en" | "pt" | "zh" | "es";
 
