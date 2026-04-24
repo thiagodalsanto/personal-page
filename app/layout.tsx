@@ -11,6 +11,11 @@ export const metadata: Metadata = {
     template: "%s | Thiago Dal Santo",
   },
   description: "Web & Mobile Developer with 4+ years of experience",
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 const inter = Inter({
