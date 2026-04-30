@@ -2,6 +2,7 @@ export const en = {
   nav: {
     about: "About",
     experience: "Experience",
+    education: "Education",
     contact: "Contact",
   },
   hero: {
@@ -111,5 +112,26 @@ export const en = {
         handle: "thiagodalsanto",
       },
     },
+  },
+  education: {
+    title: "Education",
+    items: [
+      {
+        course: "Master in Software Engineering",
+        school: "Polytechnic Institute of Setúbal (IPS)",
+        period: "Sep 2024 — May 2026",
+        duration: "1 year 9 mos",
+        description:
+          "Research Thesis: \"A Component-Based UI Framework for Personalized Post-Stroke Mobile Applications\"",
+      },
+      {
+        course: "Bachelor in Computer Science",
+        school: "Technological Federal University of Paraná (UTFPR)",
+        period: "Mar 2019 — Jun 2024",
+        duration: "5 years 3 mos",
+        description:
+          "Research Monography: \"Development of a Business Intelligence Application Module for Productivity Analysis in Vertical Farms\"",
+      },
+    ],
   },
 };

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type Dispatch, type SetStateAction } from "react";
 import { useSettings } from "../../store/useSettings";
 
 const options = [
@@ -10,11 +10,14 @@ const options = [
   { value: "zh", label: "ZH" },
 ];
 
-export default function LanguageSelect() {
+type LanguageSelectProps = {
+  open: boolean;
+  setOpen: Dispatch<SetStateAction<boolean>>;
+};
+
+export default function LanguageSelect({ open, setOpen }: LanguageSelectProps) {
   const lang = useSettings((s) => s.lang);
   const setLang = useSettings((s) => s.setLang);
-
-  const [open, setOpen] = useState(false);
 
   const current = options.find((o) => o.value === lang);
 

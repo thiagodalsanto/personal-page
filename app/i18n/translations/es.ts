@@ -2,6 +2,7 @@ export const es = {
   nav: {
     about: "Acerca de",
     experience: "Experiencia",
+    education: "Educación",
     contact: "Contacto",
   },
   hero: {
@@ -111,5 +112,26 @@ export const es = {
         handle: "thiagodalsanto",
       },
     },
+  },
+  education: {
+    title: "Educación",
+    items: [
+      {
+        course: "Máster en Ingeniería de Software",
+        school: "Instituto Politécnico de Setúbal (IPS)",
+        period: "Sep 2024 — May 2026",
+        duration: "1 año 9 meses",
+        description:
+          'Tesis de investigación: "Un framework de interfaz de usuario basado en componentes para aplicaciones móviles personalizadas post-ictus"',
+      },
+      {
+        course: "Licenciatura en Ciencias de la Computación",
+        school: "Universidad Tecnológica Federal de Paraná (UTFPR)",
+        period: "Mar 2019 — Jun 2024",
+        duration: "5 años 3 meses",
+        description:
+          'Monografía de investigación: "Desarrollo de un módulo de aplicación de Business Intelligence para el análisis de productividad en granjas verticales"',
+      },
+    ],
   },
 };

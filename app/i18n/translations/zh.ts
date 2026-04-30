@@ -2,6 +2,7 @@ export const zh = {
   nav: {
     about: "关于",
     experience: "经历",
+    education: "教育",
     contact: "联系",
   },
   hero: {
@@ -111,5 +112,25 @@ export const zh = {
         handle: "thiagodalsanto",
       },
     },
+  },
+  education: {
+    title: "教育",
+    items: [
+      {
+        course: "软件工程硕士",
+        school: "塞图巴尔理工学院（IPS）",
+        period: "2024年9月 — 2026年5月",
+        duration: "1年9个月",
+        description:
+          '研究论文："一种基于组件的UI框架，用于个性化卒中后移动应用"',
+      },
+      {
+        course: "计算机科学学士",
+        school: "巴拉那联邦技术大学（UTFPR）",
+        period: "2019年3月 — 2024年6月",
+        duration: "5年3个月",
+        description: '研究专著："用于垂直农场生产力分析的商业智能应用模块开发"',
+      },
+    ],
   },
 };
