@@ -12,9 +12,9 @@ export const metadata: Metadata = {
   },
   description: "Web & Mobile Developer with 4+ years of experience",
   icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
+    icon: "favicon.png",
+    shortcut: "favicon.png",
+    apple: "favicon.png",
   },
 };
 
@@ -36,8 +36,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
       <head>
-        <link rel="icon" href="../public/favicon.png" />
-        <link rel="apple-touch-icon" href="../public/favicon.png" />
         <Analytics />
       </head>
 
