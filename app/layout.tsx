@@ -12,9 +12,9 @@ export const metadata: Metadata = {
   },
   description: "Web & Mobile Developer with 4+ years of experience",
   icons: {
-    icon: "/personal-page/favicon.png",
-    shortcut: "/personal-page/favicon.png",
-    apple: "/personal-page/favicon.png",
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
   },
 };
 
