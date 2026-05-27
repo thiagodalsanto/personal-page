@@ -3,6 +3,7 @@ export const zh = {
     about: "关于",
     experience: "经历",
     education: "教育",
+    publications: "发表文章",
     contact: "联系",
   },
   hero: {
@@ -130,6 +131,42 @@ export const zh = {
         period: "2019年3月 — 2024年6月",
         duration: "5年3个月",
         description: '研究专著："用于垂直农场生产力分析的商业智能应用模块开发"',
+      },
+    ],
+  },
+  publications: {
+    title: "发表文章",
+    viewProfile: "查看 Google Scholar 完整个人资料",
+    items: [
+      {
+        title: "开发用于管理自动化室内垂直农场数据的应用程序",
+        publisher: "巴西计算机学会 (SBC)",
+        date: "10/2023",
+        url: "https://sol.sbc.org.br/index.php/latinoware/article/view/26097",
+      },
+      {
+        title: "开发用于检测生产线中鸡蛋的图像处理系统",
+        publisher: "Revista Gestão e Conhecimento",
+        date: "03/2024",
+        url: "https://ojs.revistagc.com.br/ojs/index.php/rgc/article/view/312",
+      },
+      {
+        title: "Web 环境中使用 JavaScript 和 TypeScript 的图形界面加载时间：React、VueJS 和 HTML 的比较分析",
+        publisher: "Revista Gestão e Conhecimento",
+        date: "03/2024",
+        url: "https://ojs.revistagc.com.br/ojs/index.php/rgc/article/view/313",
+      },
+      {
+        title: "通过图像处理技术在生产线中准确检测鸡蛋的挑战",
+        publisher: "I Seven International Engineering Congress",
+        date: "05/2024",
+        url: "https://sevenpubl.com.br/anais7/article/view/4289",
+      },
+      {
+        title: "最大化Web项目的效率：框架对性能影响的分析",
+        publisher: "I Seven International Engineering Congress",
+        date: "05/2024",
+        url: "https://sevenpubl.com.br/anais7/article/view/4290",
       },
     ],
   },

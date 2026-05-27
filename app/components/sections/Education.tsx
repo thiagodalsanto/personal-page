@@ -10,8 +10,8 @@ export default function Education() {
     <section
       id="education"
       className="w-full min-h-screen flex items-center justify-center
-      dark:bg-gradient-to-b dark:from-zinc-900 dark:to-black 
-      bg-gradient-to-b from-zinc-300 to-white 
+      dark:bg-gradient-to-b dark:from-zinc-900 dark:via-black dark:to-zinc-900
+      bg-gradient-to-b from-zinc-300 via-white to-zinc-300
       py-8"
     >
       <div className="max-w-4xl w-full px-6">

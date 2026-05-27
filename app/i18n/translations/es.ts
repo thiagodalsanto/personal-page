@@ -3,6 +3,7 @@ export const es = {
     about: "Acerca de",
     experience: "Experiencia",
     education: "Educación",
+    publications: "Publicaciones",
     contact: "Contacto",
   },
   hero: {
@@ -131,6 +132,42 @@ export const es = {
         duration: "5 años 3 meses",
         description:
           'Monografía de investigación: "Desarrollo de un módulo de aplicación de Business Intelligence para el análisis de productividad en granjas verticales"',
+      },
+    ],
+  },
+  publications: {
+    title: "Publicaciones",
+    viewProfile: "Ver perfil completo en Google Scholar",
+    items: [
+      {
+        title: "Desarrollo de una aplicación para la gestión de datos de granjas verticales automatizadas en interiores",
+        publisher: "Sociedad Brasileña de Computación (SBC)",
+        date: "10/2023",
+        url: "https://sol.sbc.org.br/index.php/latinoware/article/view/26097",
+      },
+      {
+        title: "Desarrollo de un sistema de procesamiento de imágenes para la detección de huevos de gallina en líneas de producción",
+        publisher: "Revista Gestão e Conhecimento",
+        date: "03/2024",
+        url: "https://ojs.revistagc.com.br/ojs/index.php/rgc/article/view/312",
+      },
+      {
+        title: "Tiempo de carga de interfaces gráficas en entorno web con JavaScript y TypeScript: análisis comparativo entre React, VueJS e HTML",
+        publisher: "Revista Gestão e Conhecimento",
+        date: "03/2024",
+        url: "https://ojs.revistagc.com.br/ojs/index.php/rgc/article/view/313",
+      },
+      {
+        title: "Desafíos en la detección precisa de huevos de gallina en líneas de producción mediante técnicas de procesamiento de imágenes",
+        publisher: "I Seven International Engineering Congress",
+        date: "05/2024",
+        url: "https://sevenpubl.com.br/anais7/article/view/4289",
+      },
+      {
+        title: "Maximización de la eficiencia de proyectos web: Un análisis de la influencia de los frameworks en el desempeño",
+        publisher: "I Seven International Engineering Congress",
+        date: "05/2024",
+        url: "https://sevenpubl.com.br/anais7/article/view/4290",
       },
     ],
   },

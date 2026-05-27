@@ -3,6 +3,7 @@ export const pt = {
     about: "Sobre",
     experience: "Experiência",
     education: "Educação",
+    publications: "Publicações",
     contact: "Contato",
   },
   hero: {
@@ -131,6 +132,42 @@ export const pt = {
         duration: "5 anos e 3 meses",
         description:
           'Monografia de investigação: "Desenvolvimento de um módulo de aplicação de Business Intelligence para análise de produtividade em fazendas verticais"',
+      },
+    ],
+  },
+  publications: {
+    title: "Publicações",
+    viewProfile: "Ver perfil completo no Google Scholar",
+    items: [
+      {
+        title: "Desenvolvimento de uma aplicaçao para gerenciamento de dados de hortas automatizadas indoor",
+        publisher: "Sociedade Brasileira de Computação (SBC)",
+        date: "10/2023",
+        url: "https://sol.sbc.org.br/index.php/latinoware/article/view/26097",
+      },
+      {
+        title: "Desenvolvimento de um sistema de processamento de imagem para detecção de ovos de galinha em linhas de produção",
+        publisher: "Revista Gestão e Conhecimento",
+        date: "03/2024",
+        url: "https://ojs.revistagc.com.br/ojs/index.php/rgc/article/view/312",
+      },
+      {
+        title: "Tempo de carregamento de interfaces gráficas em ambiente web com JavaScript e TypeScript: uma análise comparativa entre React, VueJS e HTML",
+        publisher: "Revista Gestão e Conhecimento",
+        date: "03/2024",
+        url: "https://ojs.revistagc.com.br/ojs/index.php/rgc/article/view/313",
+      },
+      {
+        title: "Desafios na detecção precisa de ovos de galinha em linhas de produção por meio de técnicas de processamento de imagem",
+        publisher: "I Seven International Engineering Congress",
+        date: "05/2024",
+        url: "https://sevenpubl.com.br/anais7/article/view/4289",
+      },
+      {
+        title: "Maximizando a eficiência de projetos web: Uma análise da influência dos frameworks no desempenho",
+        publisher: "I Seven International Engineering Congress",
+        date: "05/2024",
+        url: "https://sevenpubl.com.br/anais7/article/view/4290",
       },
     ],
   },

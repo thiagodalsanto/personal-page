@@ -6,6 +6,7 @@ import Contact from "./components/sections/Contact";
 import Experience from "./components/sections/Experience";
 import Hero from "./components/sections/Hero";
 import Education from "./components/sections/Education";
+import Publications from "./components/sections/Publications";
 
 export default function Home() {
 
@@ -15,6 +16,7 @@ export default function Home() {
       <About />
       <Experience />
       <Education />
+      <Publications />
       <Contact />
     </div>
   );

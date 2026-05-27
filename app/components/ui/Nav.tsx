@@ -29,6 +29,7 @@ export default function Nav() {
     { href: "#about", label: t.nav.about },
     { href: "#experience", label: t.nav.experience },
     { href: "#education", label: t.nav.education },
+    { href: "#publications", label: t.nav.publications },
     { href: "#contact", label: t.nav.contact },
   ];
 

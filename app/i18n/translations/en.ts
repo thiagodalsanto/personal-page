@@ -3,6 +3,7 @@ export const en = {
     about: "About",
     experience: "Experience",
     education: "Education",
+    publications: "Publications",
     contact: "Contact",
   },
   hero: {
@@ -131,6 +132,42 @@ export const en = {
         duration: "5 years 3 mos",
         description:
           "Research Monography: \"Development of a Business Intelligence Application Module for Productivity Analysis in Vertical Farms\"",
+      },
+    ],
+  },
+  publications: {
+    title: "Publications",
+    viewProfile: "View Full Profile on Google Scholar",
+    items: [
+      {
+        title: "Development of an application for managing automated indoor vegetable garden data",
+        publisher: "Brazilian Computer Society (SBC)",
+        date: "10/2023",
+        url: "https://sol.sbc.org.br/index.php/latinoware/article/view/26097",
+      },
+      {
+        title: "Development of an image processing system for detecting chicken eggs in production lines",
+        publisher: "Revista Gestão e Conhecimento",
+        date: "03/2024",
+        url: "https://ojs.revistagc.com.br/ojs/index.php/rgc/article/view/312",
+      },
+      {
+        title: "Loading time of graphical interfaces in web environment with JavaScript and TypeScript: comparative analysis between React, VueJS and HTML",
+        publisher: "Revista Gestão e Conhecimento",
+        date: "03/2024",
+        url: "https://ojs.revistagc.com.br/ojs/index.php/rgc/article/view/313",
+      },
+      {
+        title: "Challenges in accurate detection of chicken eggs in production lines through image processing techniques",
+        publisher: "I Seven International Engineering Congress",
+        date: "05/2024",
+        url: "https://sevenpubl.com.br/anais7/article/view/4289",
+      },
+      {
+        title: "Maximizing the efficiency of web projects: An analysis of the influence of frameworks on performance",
+        publisher: "I Seven International Engineering Congress",
+        date: "05/2024",
+        url: "https://sevenpubl.com.br/anais7/article/view/4290",
       },
     ],
   },
