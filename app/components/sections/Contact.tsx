@@ -19,36 +19,45 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative w-screen h-screen flex items-center justify-center dark:bg-gradient-to-tl dark:from-zinc-900/0 dark:via-zinc-900 dark:to-zinc-900/0 bg-gradient-to-tl from-white/0 via-zinc-200 to-white/0"
+      className="relative w-full min-h-screen flex flex-col items-center justify-center dark:bg-gradient-to-b dark:from-black dark:via-zinc-950/50 dark:to-zinc-900 py-32 md:py-40"
     >
-      <div className="container flex items-center justify-center h-full px-4 mx-auto">
-        <div className="grid w-full grid-cols-1 gap-8 sm:grid-cols-3 lg:gap-16">
-          {Object.values(t.contact.socials).map((s, i) => (
-            <ScrollReveal key={i} delay={i * 0.15}>
-              <Card>
+        <div className="w-full flex items-center justify-center flex-1 px-4">
+        <div className="w-full max-w-6xl">
+          <ScrollReveal>
+            <h2 className="text-4xl md:text-6xl font-display dark:text-white mb-20 text-center">
+              Get In Touch
+            </h2>
+          </ScrollReveal>
+          
+          <div className="grid w-full grid-cols-1 gap-6 md:gap-8 sm:grid-cols-3">
+            {Object.values(t.contact.socials).map((s, i) => (
+              <ScrollReveal key={i} delay={i * 0.15}>
                 <Link
                   href={s.href}
                   target="_blank"
-                  className="p-4 relative flex flex-col items-center gap-4 duration-700 group md:gap-8 md:py-24 lg:pb-48 md:p-16"
+                  className="group h-full"
                 >
-                  <span className="absolute w-px h-2/3 bg-gradient-to-b from-zinc-500 via-zinc-500/50 to-transparent" />
+                  <div className="p-8 h-full rounded-2xl dark:bg-gradient-to-br dark:from-zinc-900/60 dark:to-zinc-950/40 border dark:border-zinc-700/40 backdrop-blur-sm hover:dark:border-white/20 transition-all duration-300 flex flex-col items-center justify-center gap-6">
+                    <div className="relative">
+                      <div className="absolute inset-0 dark:bg-gradient-to-r dark:from-blue-500 dark:to-purple-500 rounded-full opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300" />
+                      <span className="relative flex items-center justify-center w-16 h-16 border-2 rounded-full dark:border-zinc-600 dark:bg-zinc-900/50 group-hover:dark:border-white/50 group-hover:dark:bg-zinc-800/50 transition-all duration-300 dark:text-zinc-300 group-hover:dark:text-white">
+                        {iconMap[s.icon as keyof typeof iconMap]}
+                      </span>
+                    </div>
 
-                  <span className="relative z-10 flex items-center justify-center w-12 h-12 border rounded-full text-zinc-200 border-zinc-500 dark:bg-zinc-900 bg-zinc-400 group-hover:text-white group-hover:border-zinc-200">
-                    {iconMap[s.icon as keyof typeof iconMap]}
-                  </span>
-
-                  <div className="z-10 flex flex-col items-center">
-                    <span className="text-xl dark:text-zinc-200 text-zinc-700 group-hover:text-white font-display">
-                      {s.handle}
-                    </span>
-                    <span className="mt-2 text-sm dark:text-zinc-400 text-zinc-500 group-hover:text-zinc-200">
-                      {s.label}
-                    </span>
+                    <div className="flex flex-col items-center text-center w-full">
+                      <span className="text-lg md:text-xl dark:text-white font-semibold group-hover:dark:text-blue-300 transition-colors truncate w-full px-2">
+                        {s.handle}
+                      </span>
+                      <span className="mt-2 text-sm dark:text-zinc-400 group-hover:dark:text-zinc-300 transition-colors">
+                        {s.label}
+                      </span>
+                    </div>
                   </div>
                 </Link>
-              </Card>
-            </ScrollReveal>
-          ))}
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </div>
       <Footer />

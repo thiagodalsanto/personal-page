@@ -13,17 +13,17 @@ export const es = {
   about: {
     title: "Acerca de",
     text1:
-      "Ingeniero de Software especializado en desarrollo Web con React, Next.js y Angular, también con experiencia en desarrollo móvil utilizando Flutter, construyendo aplicaciones escalables en entornos empresariales y financieros.",
+      "Ingeniero de Software especializado en desarrollo Web con React, Next.js y Angular, también con experiencia en desarrollo móvil utilizando Flutter y React Native, construyendo aplicaciones escalables en entornos empresariales y financieros.",
     text2:
       "Tengo una sólida experiencia desarrollando aplicaciones web modernas y plataformas internas soportadas por AWS y GCP. Mi enfoque está en la arquitectura limpia, el rendimiento y la construcción de sistemas front-end escalables y mantenibles, con fuerte atención a la UX y la confiabilidad.",
     text3:
-      "Licenciatura en Ciencias de la Computación (UTFPR) y Maestría en Ingeniería de Software (IPS, prevista para mayo de 2026).",
+      "Licenciatura en Ciencias de la Computación (UTFPR) y Maestría en Ingeniería de Software (IPS, prevista para 2026).",
     card1_text1: "Experiencia",
     card1_text2: "4+ años",
     card2_text1: "Enfoque",
-    card2_text2: "Web • Móvil • UX",
+    card2_text2: "Móvil • Web • UX",
     card3_text1: "Stack",
-    card3_text2: "Next.js • React • Angular • Flutter",
+    card3_text2: "Next.js • React • Flutter • React Native",
   },
   experience: {
     title: "Experiencia",
@@ -49,43 +49,30 @@ export const es = {
           "Trabajo en dos iniciativas principales dentro de un entorno de servicios financieros: un esfuerzo a corto plazo enfocado en seguridad de aplicaciones y modernización de sistemas heredados (3 meses), y una iniciativa a largo plazo centrada en infraestructura de datos e ingeniería ETL. El enfoque fue mejorar la seguridad, confiabilidad, escalabilidad y eficiencia operativa de los sistemas y plataformas de datos.",
       },
       {
-        role: "Desarrollador Web",
+        role: "Ingeniero de Software",
         company: "Silicon Village",
         period: "Dic 2023 - Feb 2026",
         duration: "2 años y 3 meses",
         stack: [
+          "Flutter",
           "Angular",
           "React",
           "TypeScript",
           "JavaScript",
           "GCP",
           "Firebase",
-        ],
-        description:
-          "Desarrollo de plataformas internas de gestión de RRHH con arquitectura serverless basada en Firebase y Google Cloud Platform (GCP), con enfoque en automatización de procesos, escalabilidad y mejora de flujos internos.",
-      },
-      {
-        role: "Desarrollador Mobile",
-        company: "Silicon Village",
-        period: "Dic 2023 - Feb 2026",
-        duration: "2 años y 3 meses",
-        stack: [
-          "Flutter",
-          "TypeScript",
-          "GCP",
-          "Firebase",
           "Bitrise",
           "Codemagic",
         ],
         description:
-          "Desarrollo de aplicaciones móviles multiplataforma utilizando Flutter, siguiendo arquitectura MVVM y aprovechando Firebase y GCP para ofrecer soluciones escalables y de alto rendimiento para la gestión de personal.",
+        "Desarrollé aplicaciones móviles multiplataforma y plataformas internas de gestión de RR. HH. utilizando Flutter, React y Angular, y una arquitectura serverless impulsada por Firebase y Google Cloud Platform (GCP), siguiendo principios MVVM para ofrecer soluciones escalables y de alto rendimiento, con enfoque en la automatización de procesos, la gestión de la fuerza laboral y la mejora de los flujos internos."
       },
       {
         role: "Desarrollador Mobile",
         company: "AsapTech",
         period: "Dic 2023 - Jun 2024",
         duration: "7 meses",
-        stack: ["Flutter", "Firebase", "MySQL", "GraphQL", "Codemagic"],
+        stack: ["Flutter", "MongoDB", "MySQL", "NestJS", "GraphQL", "Codemagic"],
         description:
           "Participación en el desarrollo de una aplicación móvil de banca digital enfocada en pagos y operaciones financieras en tiempo real. Construida con Flutter utilizando una arquitectura modular y escalable, integrando APIs GraphQL y servicios bancarios externos (Qi-Tech), asegurando rendimiento, confiabilidad y una experiencia de usuario fluida.",
       },

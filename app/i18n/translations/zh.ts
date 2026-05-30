@@ -13,17 +13,17 @@ export const zh = {
   about: {
     title: "关于",
     text1:
-      "软件工程师，专注于使用 React、Next.js 和 Angular 进行 Web 开发，同时也有使用 Flutter 进行移动端开发的经验，在企业和金融环境中构建可扩展的应用程序。",
+      "软件工程师，专注于使用 React、Next.js 和 Angular 进行 Web 开发，同时也有使用 Flutter 和 React Native 进行移动端开发的经验，在企业和金融环境中构建可扩展的应用程序。",
     text2:
       "我在开发现代 Web 应用程序和基于 AWS 与 GCP 支持的内部平台方面拥有丰富经验。我的重点是清晰架构、性能优化，以及构建可扩展、易维护且具有良好用户体验与高可靠性的前端系统。",
     text3:
-      "计算机科学学士（UTFPR）以及软件工程硕士（IPS，预计 2026 年 5 月毕业）。",
+      "计算机科学学士（UTFPR）以及软件工程硕士（IPS，预计 2026）。",
     card1_text1: "经验",
     card1_text2: "4年以上",
     card2_text1: "专注方向",
-    card2_text2: "Web • Mobile • UX",
+    card2_text2: "Mobile • Web • UX",
     card3_text1: "技术栈",
-    card3_text2: "Next.js • React • Angular • Flutter",
+    card3_text2: "Next.js • React • Flutter • React Native",
   },
   experience: {
     title: "工作经验",
@@ -49,43 +49,30 @@ export const zh = {
           "在金融服务环境中参与了两个主要项目：一个为期3个月的短期应用安全与遗留系统现代化项目，以及一个长期的数据基础设施和ETL工程项目。重点在于提升系统安全性、可靠性、可扩展性以及软件和数据平台的运营效率。",
       },
       {
-        role: "Web开发工程师",
+        role: "软件工程师",
         company: "Silicon Village",
         period: "2023年12月 - 2026年2月",
         duration: "2年3个月",
         stack: [
+          "Flutter",
           "Angular",
           "React",
           "TypeScript",
           "JavaScript",
           "GCP",
           "Firebase",
-        ],
-        description:
-          "开发基于Firebase和Google Cloud Platform（GCP）的无服务器架构人力资源管理平台，专注于流程自动化、可扩展性以及内部工作流程优化。",
-      },
-      {
-        role: "移动开发工程师",
-        company: "Silicon Village",
-        period: "2023年12月 - 2026年2月",
-        duration: "2年3个月",
-        stack: [
-          "Flutter",
-          "TypeScript",
-          "GCP",
-          "Firebase",
           "Bitrise",
           "Codemagic",
         ],
         description:
-          "使用Flutter开发跨平台移动应用，遵循MVVM架构，并结合Firebase和GCP，提供高性能、可扩展的员工管理解决方案。",
+          "开发了跨平台移动应用和内部人力资源管理平台，使用 Flutter、React 和 Angular，以及基于 Firebase 和 Google Cloud Platform (GCP) 的无服务器架构，遵循 MVVM 原则，提供可扩展的高性能解决方案，重点关注流程自动化、劳动力管理以及内部工作流程的优化。"
       },
       {
         role: "移动开发工程师",
         company: "AsapTech",
         period: "2023年12月 - 2024年6月",
         duration: "7个月",
-        stack: ["Flutter", "Firebase", "MySQL", "GraphQL", "Codemagic"],
+        stack: ["Flutter", "MongoDB", "MySQL", "NestJS", "GraphQL", "Codemagic"],
         description:
           "参与开发一款专注于支付和实时金融操作的数字银行移动应用。采用Flutter构建，使用模块化和可扩展架构，集成GraphQL API和外部银行服务（Qi-Tech），确保高性能、可靠性和流畅的用户体验。",
       },
