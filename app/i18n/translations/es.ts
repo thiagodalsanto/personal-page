@@ -23,7 +23,7 @@ export const es = {
     card2_text1: "Enfoque",
     card2_text2: "Móvil • Web • UX",
     card3_text1: "Stack",
-    card3_text2: "Next.js • React • Flutter • React Native",
+    card3_text2: "Flutter • React Native • React • Next.js",
   },
   experience: {
     title: "Experiencia",
@@ -34,20 +34,22 @@ export const es = {
         period: "Oct 2024 - Feb 2026",
         duration: "1 año y 6 meses",
         stack: [
-          "AWS",
-          "SQL Server",
-          "MySQL",
-          "SSIS",
-          "ETL",
-          "PHP",
+          "TypeScript",
+          "JavaScript",
           "Node",
           "C#",
+          "PHP",
+          "AWS",
+          "MySQL",
+          "SQL Server",
           "Checkmarx",
           "SonarQube",
+          "SSIS",
+          "ETL",
         ],
         description:
-          "Trabajo en dos iniciativas principales dentro de un entorno de servicios financieros: un esfuerzo a corto plazo enfocado en seguridad de aplicaciones y modernización de sistemas heredados (3 meses), y una iniciativa a largo plazo centrada en infraestructura de datos e ingeniería ETL. El enfoque fue mejorar la seguridad, confiabilidad, escalabilidad y eficiencia operativa de los sistemas y plataformas de datos.",
-      },
+         "Trabajé en dos iniciativas principales en un entorno de servicios financieros: una de application security and legacy modernization effort, y otra de data infrastructure, ETL engineering y desarrollo de software. El enfoque fue mejorar la seguridad, confiabilidad, escalabilidad y eficiencia operativa de los sistemas y plataformas de datos."
+        },
       {
         role: "Ingeniero de Software",
         company: "Silicon Village",
@@ -108,7 +110,6 @@ export const es = {
         course: "Máster en Ingeniería de Software",
         school: "Instituto Politécnico de Setúbal (IPS)",
         period: "Sep 2024 — May 2026",
-        duration: "1 año 9 meses",
         description:
           'Tesis de investigación: "Un framework de interfaz de usuario basado en componentes para aplicaciones móviles personalizadas post-ictus"',
       },
@@ -116,7 +117,6 @@ export const es = {
         course: "Licenciatura en Ciencias de la Computación",
         school: "Universidad Tecnológica Federal de Paraná (UTFPR)",
         period: "Mar 2019 — Jun 2024",
-        duration: "5 años 3 meses",
         description:
           'Monografía de investigación: "Desarrollo de un módulo de aplicación de Business Intelligence para el análisis de productividad en granjas verticales"',
       },

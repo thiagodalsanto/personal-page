@@ -23,7 +23,7 @@ export const en = {
     card2_text1: "Focus",
     card2_text2: " Mobile • Web • UX",
     card3_text1: "Stack",
-    card3_text2: "Next.js • React • Flutter • React Native",
+    card3_text2: "Flutter • React Native • React • Next.js",
   },
   experience: {
     title: "Experience",
@@ -34,20 +34,22 @@ export const en = {
         period: "Oct 2024 - Feb 2026",
         duration: "1 yr 6 mos",
         stack: [
-          "AWS",
-          "SQL Server",
-          "MySQL",
-          "SSIS",
-          "ETL",
-          "PHP",
+          "TypeScript",
+          "JavaScript",
           "Node",
           "C#",
+          "PHP",
+          "AWS",
+          "MySQL",
+          "SQL Server",
           "Checkmarx",
           "SonarQube",
+          "SSIS",
+          "ETL",
         ],
         description:
-          "Worked across two main initiatives within a financial services environment: a short-term application security and legacy modernization effort (3 months), and a longer-term data infrastructure and ETL engineering initiative. The focus was on improving system security, reliability, scalability, and operational efficiency across software and data platforms.",
-      },
+          "Worked across two main initiatives within a financial services environment: an application security and legacy modernization effort, and a data infrastructure, ETL engineering, and software development initiative. The focus was on improving system security, reliability, scalability, and operational efficiency across software and data platforms."
+        },
       {
         role: "Software Engineer",
         company: "Silicon Village",
@@ -108,7 +110,6 @@ export const en = {
         course: "Master in Software Engineering",
         school: "Polytechnic Institute of Setúbal (IPS)",
         period: "Sep 2024 — Jul 2026",
-        duration: "1 year 11 mos",
         description:
           "Research Thesis: \"A Component-Based UI Framework for Personalized Post-Stroke Mobile Applications\"",
       },
@@ -116,7 +117,6 @@ export const en = {
         course: "Bachelor in Computer Science",
         school: "Technological Federal University of Paraná (UTFPR)",
         period: "Mar 2019 — Jun 2024",
-        duration: "5 years 3 mos",
         description:
           "Research Monography: \"Development of a Business Intelligence Application Module for Productivity Analysis in Vertical Farms\"",
       },

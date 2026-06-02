@@ -44,11 +44,6 @@ export default function Education() {
                     <p className="text-sm dark:text-zinc-400">
                       {edu.period}
                     </p>
-                    {edu.duration && (
-                      <p className="text-xs dark:text-zinc-500 mt-1 italic">
-                        {edu.duration}
-                      </p>
-                    )}
                   </div>
 
                   <p className="text-sm leading-relaxed dark:text-zinc-300 font-light flex-1">
