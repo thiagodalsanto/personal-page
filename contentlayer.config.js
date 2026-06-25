@@ -42,6 +42,14 @@ export const Project = defineDocumentType(() => ({
 		repository: {
 			type: "string",
 		},
+		image: { 
+			type: "string" 
+		},
+  		technologies: { 
+			type: "list", of: { 
+				type: "string" 
+			} 
+		},
 	},
 	computedFields,
 }));

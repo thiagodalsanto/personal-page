@@ -4,6 +4,7 @@ export const pt = {
     experience: "Experiência",
     education: "Educação",
     publications: "Publicações",
+    projects: "Projetos",
     contact: "Contato",
   },
   hero: {
@@ -30,13 +31,12 @@ export const pt = {
     items: [
       {
         role: "Engenheiro de Software",
-        company: "Stellantis Financial Services Brazil",
+        company: "Stellantis",
         period: "Out 2024 - Fev 2026",
         duration: "1 ano e 6 meses",
         stack: [
           "TypeScript",
-          "JavaScript",
-          "Node",
+          "Node.js",
           "C#",
           "PHP",
           "AWS",
@@ -44,8 +44,9 @@ export const pt = {
           "SQL Server",
           "Checkmarx",
           "SonarQube",
-          "SSIS",
-          "ETL",
+          "Bash Script",
+          "AppDynamics",
+          "Snowflake Cloud",
         ],
         description:
           "Trabalhei em duas iniciativas principais num ambiente de serviços financeiros: uma de application security and legacy modernization effort, e outra de data infrastructure, ETL engineering e desenvolvimento de software. O foco foi melhorar a segurança, confiabilidade, escalabilidade e eficiência operacional dos sistemas e plataformas de dados."
@@ -58,9 +59,13 @@ export const pt = {
          stack: [
           "Flutter",
           "Angular",
-          "React",
+          "React.js",
           "TypeScript",
-          "JavaScript",
+          "Tailwind CSS",
+          "SASS",
+          "Bootstrap",
+          "Jest",
+          "Jasmine",
           "GCP",
           "Firebase",
           "Bitrise",
@@ -74,7 +79,7 @@ export const pt = {
         company: "AsapTech",
         period: "Dez 2023 - Jun 2024",
         duration: "7 meses",
-        stack: ["Flutter", "MongoDB", "MySQL", "NestJS", "GraphQL", "Codemagic"],
+        stack: ["Flutter", "MongoDB", "MySQL", "NestJS", "TypeScript", "GraphQL", "Codemagic"],
         description:
           "Contribuição no desenvolvimento de uma aplicação móvel de banco digital focada em pagamentos e operações financeiras em tempo real. Construída com Flutter utilizando arquitetura modular e escalável, integrando APIs GraphQL e serviços bancários externos (Qi-Tech), garantindo performance, confiabilidade e uma experiência fluida para o usuário.",
       },
@@ -109,7 +114,7 @@ export const pt = {
       {
         course: "Mestrado em Engenharia de Software",
         school: "Instituto Politécnico de Setúbal (IPS)",
-        period: "Set 2024 — Mai 2026",
+        period: "Set 2024 — Ago 2026",
         description:
           'Tese de investigação: "Um framework de UI baseado em componentes para aplicações móveis personalizadas pós-AVC"',
       },

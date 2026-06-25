@@ -28,6 +28,7 @@ export default function Nav() {
   const links = [
     { href: "#about", label: t.nav.about },
     { href: "#experience", label: t.nav.experience },
+    { href: "#projects", label: t.nav.projects },
     { href: "#education", label: t.nav.education },
     { href: "#publications", label: t.nav.publications },
     { href: "#contact", label: t.nav.contact },

@@ -4,6 +4,7 @@ export const zh = {
     experience: "经历",
     education: "教育",
     publications: "发表文章",
+    projects: "项目",
     contact: "联系",
   },
   hero: {
@@ -30,13 +31,12 @@ export const zh = {
     items: [
       {
         role: "软件工程师",
-        company: "Stellantis Financial Services Brazil",
+        company: "Stellantis",
         period: "2024年10月 - 2026年2月",
         duration: "1年6个月",
         stack: [
           "TypeScript",
-          "JavaScript",
-          "Node",
+          "Node.js",
           "C#",
           "PHP",
           "AWS",
@@ -44,8 +44,9 @@ export const zh = {
           "SQL Server",
           "Checkmarx",
           "SonarQube",
-          "SSIS",
-          "ETL",
+          "Bash Script",
+          "AppDynamics",
+          "Snowflake Cloud",
         ],
         description:
           "在金融服务环境中，我参与了两个主要项目：一个是应用安全与遗留系统现代化（application security and legacy modernization effort），另一个是数据基础设施、ETL工程和软件开发。重点在于提升系统与数据平台的安全性、可靠性、可扩展性以及运营效率。"
@@ -58,9 +59,13 @@ export const zh = {
         stack: [
           "Flutter",
           "Angular",
-          "React",
+          "React.js",
           "TypeScript",
-          "JavaScript",
+          "Tailwind CSS",
+          "SASS",
+          "Bootstrap",
+          "Jest",
+          "Jasmine",
           "GCP",
           "Firebase",
           "Bitrise",
@@ -74,7 +79,7 @@ export const zh = {
         company: "AsapTech",
         period: "2023年12月 - 2024年6月",
         duration: "7个月",
-        stack: ["Flutter", "MongoDB", "MySQL", "NestJS", "GraphQL", "Codemagic"],
+        stack: ["Flutter", "MongoDB", "MySQL", "NestJS", "TypeScript", "GraphQL", "Codemagic"],
         description:
           "参与开发一款专注于支付和实时金融操作的数字银行移动应用。采用Flutter构建，使用模块化和可扩展架构，集成GraphQL API和外部银行服务（Qi-Tech），确保高性能、可靠性和流畅的用户体验。",
       },
@@ -109,7 +114,7 @@ export const zh = {
       {
         course: "软件工程硕士",
         school: "塞图巴尔理工学院（IPS）",
-        period: "2024年9月 — 2026年5月",
+        period: "2024年9月至2026年8月",
         description:
           '研究论文："一种基于组件的UI框架，用于个性化卒中后移动应用"',
       },
