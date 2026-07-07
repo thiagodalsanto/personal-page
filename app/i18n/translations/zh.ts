@@ -30,6 +30,24 @@ export const zh = {
     title: "工作经验",
     items: [
       {
+        role: "Frontend Developer",
+        company: "ISQe",
+        period: "2026年7月 - 至今",
+        duration: "--",
+        stack: [
+          "TypeScript",
+          "React.js",
+          "ShadCN UI",
+          "Zustand",
+          "AWS",
+          "H2",
+          "Kotlin",
+          "AWS",
+        ],
+        description:
+          ""
+        },
+      {
         role: "软件工程师",
         company: "Stellantis",
         period: "2024年10月 - 2026年2月",
@@ -54,8 +72,8 @@ export const zh = {
       {
         role: "软件工程师",
         company: "Silicon Village",
-        period: "2023年12月 - 2026年2月",
-        duration: "2年3个月",
+        period: "2023年12月 - 2024年10月",
+        duration: "11个月",
         stack: [
           "Flutter",
           "Angular",

@@ -30,6 +30,24 @@ export const pt = {
     title: "Experiência",
     items: [
       {
+        role: "Frontend Developer",
+        company: "ISQe",
+        period: "Jul 2026 - Presente",
+        duration: "--",
+        stack: [
+          "TypeScript",
+          "React.js",
+          "ShadCN UI",
+          "Zustand",
+          "AWS",
+          "H2",
+          "Kotlin",
+          "AWS",
+        ],
+        description:
+          ""
+        },
+      {
         role: "Engenheiro de Software",
         company: "Stellantis",
         period: "Out 2024 - Fev 2026",
@@ -54,8 +72,8 @@ export const pt = {
       {
         role: "Engenheiro de Software",
         company: "Silicon Village",
-        period: "Dez 2023 - Fev 2026",
-        duration: "2 anos e 3 meses",
+        period: "Dez 2023 - Out 2024",
+        duration: "11 meses",
          stack: [
           "Flutter",
           "Angular",
