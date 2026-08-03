@@ -10,16 +10,15 @@ import Publications from "./components/sections/Publications";
 import Projects from "./components/sections/Projects";
 
 export default function Home() {
-
-  return (
-    <div className="w-full overflow-x-hidden">
-      <Hero />
-      <About />
-      <Experience />
-      <Projects />
-      <Education />
-      <Publications />
-      <Contact />
-    </div>
-  );
+	return (
+		<div className="w-full overflow-x-hidden">
+			<Hero />
+			<About />
+			<Experience />
+			<Projects />
+			<Education />
+			<Publications />
+			<Contact />
+		</div>
+	);
 }
