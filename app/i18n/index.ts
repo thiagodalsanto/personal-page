@@ -6,8 +6,8 @@ import { es } from "./translations/es";
 export type Lang = "en" | "pt" | "zh" | "es";
 
 export const translations = {
-  en,
-  pt,
-  zh,
-  es,
+	en,
+	pt,
+	zh,
+	es,
 };
