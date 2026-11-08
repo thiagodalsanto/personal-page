@@ -1,38 +1,76 @@
 export const zh = {
+	meta: {
+		title: "Thiago Dal Santo — 软件工程师",
+		description:
+			"专注于 Web 与移动端开发的软件工程师，擅长 React、Next.js、Angular、Flutter 和 React Native。拥有 4 年以上为企业和金融团队构建可扩展产品的经验。",
+		ogAlt: "Thiago Dal Santo — 软件工程师",
+	},
 	nav: {
 		about: "关于",
+		work: "作品",
 		experience: "经历",
 		education: "教育",
-		publications: "发表文章",
-		projects: "项目",
+		publications: "论文",
 		contact: "联系",
+		menu: "打开菜单",
+		close: "关闭菜单",
+		language: "切换语言",
+		theme: "切换主题",
+		skip: "跳到主要内容",
 	},
 	hero: {
-		role: "Web & Mobile Developer",
-		name: "Thiago Dal Santo",
+		eyebrow: "作品集 — 2026",
+		role: "Web 与移动端开发者",
+		nameFirst: "Thiago",
+		nameLast: "Dal Santo",
+		intro:
+			"为企业和金融团队打造快速、无障碍的 Web 与移动产品——React、Next.js、Flutter，并始终关注用户体验。",
+		ctaWork: "精选作品",
+		ctaContact: "联系我",
+		scroll: "向下探索",
+		badgeRing: "WEB · MOBILE · USER EXPERIENCE · ",
+		badgeTop: "年",
+		badgeBottom: "经验",
+		index: "01 — 06",
 	},
 	about: {
-		title: "关于",
-		text1:
+		label: "关于",
+		title: "有意图的界面。",
+		paragraphs: [
 			"软件工程师，专注于使用 React、Next.js 和 Angular 进行 Web 开发，同时也有使用 Flutter 和 React Native 进行移动端开发的经验，在企业和金融环境中构建可扩展的应用程序。",
-		text2:
 			"我在开发现代 Web 应用程序和基于 AWS 与 GCP 支持的内部平台方面拥有丰富经验。我的重点是清晰架构、性能优化，以及构建可扩展、易维护且具有良好用户体验与高可靠性的前端系统。",
-		text3: "计算机科学学士（UTFPR）以及软件工程硕士（IPS，预计 2026）。",
-		card1_text1: "经验",
-		card1_text2: "4年以上",
-		card2_text1: "专注方向",
-		card2_text2: "Mobile • Web • UX",
-		card3_text1: "技术栈",
-		card3_text2: "Flutter • React Native • React • Next.js",
+			"计算机科学学士（UTFPR）以及软件工程硕士（IPS，预计 2026）。",
+		],
+		stats: [
+			{ value: "4+", label: "年经验" },
+			{ value: "移动 · Web · UX", label: "专注方向" },
+			{ value: "本科 + 硕士", label: "教育背景" },
+		],
+		stackLabel: "核心技术栈",
+		stack: [
+			"Flutter",
+			"React Native",
+			"React",
+			"Next.js",
+			"Angular",
+			"TypeScript",
+			"Node.js",
+			"AWS",
+			"GCP",
+		],
 	},
 	experience: {
-		title: "工作经验",
+		label: "经历",
+		title: "专注的成长路径。",
+		subtitle: "在金融、企业与移动端环境中构建产品。",
+		present: "至今",
+		ongoing: "进行中",
 		items: [
 			{
-				role: "Frontend Developer",
+				role: "前端开发工程师",
 				company: "ISQe",
-				period: "2026年7月 - 至今",
-				duration: "--",
+				period: "2026年7月 — 至今",
+				duration: "进行中",
 				stack: [
 					"TypeScript",
 					"React.js",
@@ -41,14 +79,14 @@ export const zh = {
 					"AWS",
 					"H2",
 					"Kotlin",
-					"AWS",
 				],
-				description: "",
+				description:
+					"使用现代 React 技术栈、组件化 UI 和云原生服务进行前端开发。",
 			},
 			{
 				role: "软件工程师",
 				company: "Stellantis",
-				period: "2024年10月 - 2026年2月",
+				period: "2024年10月 — 2026年2月",
 				duration: "1年6个月",
 				stack: [
 					"TypeScript",
@@ -65,12 +103,12 @@ export const zh = {
 					"Snowflake Cloud",
 				],
 				description:
-					"在金融服务环境中，我参与了两个主要项目：一个是应用安全与遗留系统现代化（application security and legacy modernization effort），另一个是数据基础设施、ETL工程和软件开发。重点在于提升系统与数据平台的安全性、可靠性、可扩展性以及运营效率。",
+					"在金融服务环境中参与了两个主要项目：一个是应用安全与遗留系统现代化，另一个是数据基础设施、ETL 工程和软件开发。重点在于提升系统与数据平台的安全性、可靠性、可扩展性以及运营效率。",
 			},
 			{
 				role: "软件工程师",
 				company: "Silicon Village",
-				period: "2023年12月 - 2024年10月",
+				period: "2023年12月 — 2024年10月",
 				duration: "11个月",
 				stack: [
 					"Flutter",
@@ -93,7 +131,7 @@ export const zh = {
 			{
 				role: "移动开发工程师",
 				company: "AsapTech",
-				period: "2023年12月 - 2024年6月",
+				period: "2023年12月 — 2024年6月",
 				duration: "7个月",
 				stack: [
 					"Flutter",
@@ -105,53 +143,59 @@ export const zh = {
 					"Codemagic",
 				],
 				description:
-					"参与开发一款专注于支付和实时金融操作的数字银行移动应用。采用Flutter构建，使用模块化和可扩展架构，集成GraphQL API和外部银行服务（Qi-Tech），确保高性能、可靠性和流畅的用户体验。",
+					"参与开发一款专注于支付和实时金融操作的数字银行移动应用。采用 Flutter 构建，使用模块化和可扩展架构，集成 GraphQL API 和外部银行服务（Qi-Tech），确保高性能、可靠性和流畅的用户体验。",
 			},
 		],
 	},
-	contact: {
-		designed: "使用 Next.js 和 Tailwind CSS 设计与开发。",
-		socials: {
-			github: {
-				icon: "github",
-				href: "https://github.com/thiagodalsanto",
-				label: "Github",
-				handle: "thiagodalsanto",
-			},
-			email: {
-				icon: "mail",
-				href: "mailto:thiagodalsantodaluz@gmail.com",
-				label: "Email",
-				handle: "thiagodalsantodaluz@gmail.com",
-			},
-			linkedin: {
-				icon: "linkedin",
-				href: "https://www.linkedin.com/in/thiagodalsanto",
-				label: "LinkedIn",
-				handle: "thiagodalsanto",
-			},
-		},
+	work: {
+		label: "作品",
+		title: "精选作品。",
+		subtitle: "两个已发布的项目——一个数据产品，一个无障碍工具包。",
+		count: "02 个项目",
+		viewCase: "查看案例",
+		moreOnGithub: "在 GitHub 上查看更多",
+	},
+	project: {
+		back: "返回作品",
+		caseStudy: "案例研究",
+		overview: "概述",
+		details: "详情",
+		stack: "技术栈",
+		links: "链接",
+		year: "年份",
+		type: "类型",
+		live: "在线演示",
+		source: "源码",
+		package: "软件包",
+		next: "下一个项目",
 	},
 	education: {
-		title: "教育",
+		label: "教育",
+		title: "学术基础。",
+		subtitle: "计算机科学与软件工程研究的系统训练。",
+		thesisLabel: "研究",
 		items: [
 			{
 				course: "软件工程硕士",
 				school: "塞图巴尔理工学院（IPS）",
-				period: "2024年9月至2026年8月",
+				period: "2024年9月 — 2026年8月",
 				description:
-					'研究论文："一种基于组件的UI框架，用于个性化卒中后移动应用"',
+					'研究论文："一种基于组件的 UI 框架，用于个性化卒中后移动应用"',
 			},
 			{
 				course: "计算机科学学士",
 				school: "巴拉那联邦技术大学（UTFPR）",
 				period: "2019年3月 — 2024年6月",
-				description: '研究专著："用于垂直农场生产力分析的商业智能应用模块开发"',
+				description:
+					'研究专著："用于垂直农场生产力分析的商业智能应用模块开发"',
 			},
 		],
 	},
 	publications: {
-		title: "发表文章",
+		label: "论文",
+		title: "发表论文。",
+		subtitle: "关于界面、Web 性能与计算机视觉应用的研究。",
+		count: "05 篇论文",
 		viewProfile: "查看 Google Scholar 完整个人资料",
 		items: [
 			{
@@ -180,11 +224,44 @@ export const zh = {
 				url: "https://sevenpubl.com.br/anais7/article/view/4289",
 			},
 			{
-				title: "最大化Web项目的效率：框架对性能影响的分析",
+				title: "最大化 Web 项目的效率：框架对性能影响的分析",
 				publisher: "I Seven International Engineering Congress",
 				date: "05/2024",
 				url: "https://sevenpubl.com.br/anais7/article/view/4290",
 			},
 		],
+	},
+	contact: {
+		label: "联系",
+		titleLine1: "一起打造",
+		titleLine2: "真正好用的产品。",
+		text: "有值得推进的产品、团队或想法？欢迎随时联系。",
+		emailCta: "开始对话",
+		socials: {
+			github: {
+				label: "GitHub",
+				handle: "thiagodalsanto",
+				href: "https://github.com/thiagodalsanto",
+			},
+			email: {
+				label: "Email",
+				handle: "thiagodalsantodaluz@gmail.com",
+				href: "mailto:thiagodalsantodaluz@gmail.com",
+			},
+			linkedin: {
+				label: "LinkedIn",
+				handle: "thiagodalsanto",
+				href: "https://www.linkedin.com/in/thiagodalsanto",
+			},
+		},
+	},
+	footer: {
+		designed: "使用 Next.js 和 Tailwind CSS 设计与开发。",
+		backToTop: "回到顶部",
+	},
+	notFound: {
+		title: "页面未找到。",
+		text: "你寻找的页面不存在，或者已经移动。",
+		back: "返回首页",
 	},
 };

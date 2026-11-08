@@ -1,24 +1,9 @@
-"use client";
+import type { Metadata } from "next";
+import { HomePage } from "./components/home-page";
+import { buildHomeMetadata } from "./lib/metadata";
 
-import React from "react";
-import About from "./components/sections/About";
-import Contact from "./components/sections/Contact";
-import Experience from "./components/sections/Experience";
-import Hero from "./components/sections/Hero";
-import Education from "./components/sections/Education";
-import Publications from "./components/sections/Publications";
-import Projects from "./components/sections/Projects";
+export const metadata: Metadata = buildHomeMetadata("en");
 
-export default function Home() {
-	return (
-		<div className="w-full overflow-x-hidden">
-			<Hero />
-			<About />
-			<Experience />
-			<Projects />
-			<Education />
-			<Publications />
-			<Contact />
-		</div>
-	);
+export default function Page() {
+	return <HomePage lang="en" />;
 }

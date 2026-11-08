@@ -1,39 +1,37 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { allProjects } from "contentlayer/generated";
-import { Mdx } from "@/app/components/mdx";
-import { Header } from "./header";
-import "./mdx.css";
-import { ReportView } from "./view";
-import { Redis } from "@upstash/redis";
-
-export const dynamic = "force-dynamic";
+import { ProjectView } from "../../components/project-view";
+import { getDictionary } from "../../lib/i18n";
+import { buildProjectMetadata, projectStaticParams } from "../../lib/metadata";
+import { getProject } from "../../lib/projects";
 
 type Props = {
-	params: {
-		slug: string;
-	};
+	params: Promise<{ slug: string }>;
 };
 
-export default async function PostPage({ params }: Props) {
-	const slug = params?.slug;
-	const project = allProjects.find((project) => project.slug === slug);
+export const dynamicParams = false;
 
-	if (!project) {
-		notFound();
-	}
+export function generateStaticParams() {
+	return projectStaticParams();
+}
 
-	const redis = Redis.fromEnv();
-	const views =
-		(await redis.get<number>(["pageviews", "projects", slug].join(":"))) ?? 0;
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+	const { slug } = await params;
+	const project = getProject(slug);
+	if (!project) return {};
+	return buildProjectMetadata("en", project);
+}
+
+export default async function Page({ params }: Props) {
+	const { slug } = await params;
+	const project = getProject(slug);
+	if (!project) notFound();
 
 	return (
-		<div className="bg-zinc-50 min-h-screen">
-			<Header project={project} views={views} />
-			<ReportView slug={project.slug} />
-
-			<article className="px-4 py-12 mx-auto prose prose-zinc prose-quoteless">
-				<Mdx code={project.body.code} />
-			</article>
-		</div>
+		<ProjectView
+			lang="en"
+			dict={getDictionary("en")}
+			project={project}
+		/>
 	);
 }

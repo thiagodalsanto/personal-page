@@ -1,39 +1,77 @@
 export const pt = {
+	meta: {
+		title: "Thiago Dal Santo — Engenheiro de Software",
+		description:
+			"Engenheiro de software especializado em desenvolvimento web e mobile com React, Next.js, Angular, Flutter e React Native. Mais de 4 anos construindo produtos escaláveis para equipes corporativas e financeiras.",
+		ogAlt: "Thiago Dal Santo — Engenheiro de Software",
+	},
 	nav: {
 		about: "Sobre",
+		work: "Projetos",
 		experience: "Experiência",
 		education: "Educação",
-		publications: "Publicações",
-		projects: "Projetos",
+		publications: "Pesquisa",
 		contact: "Contato",
+		menu: "Abrir menu",
+		close: "Fechar menu",
+		language: "Mudar idioma",
+		theme: "Alternar tema",
+		skip: "Ir para o conteúdo",
 	},
 	hero: {
-		role: "Web & Mobile Developer",
-		name: "Thiago Dal Santo",
+		eyebrow: "Portfólio — 2026",
+		role: "Desenvolvedor Web & Mobile",
+		nameFirst: "Thiago",
+		nameLast: "Dal Santo",
+		intro:
+			"Engenheiro de software criando produtos web e mobile rápidos e acessíveis para equipes corporativas e financeiras — React, Next.js, Flutter e um olhar atento para UX.",
+		ctaWork: "Projetos selecionados",
+		ctaContact: "Fale comigo",
+		scroll: "Explore",
+		badgeRing: "WEB · MOBILE · EXPERIÊNCIA DO USUÁRIO · ",
+		badgeTop: "anos",
+		badgeBottom: "de experiência",
+		index: "01 — 06",
 	},
 	about: {
-		title: "Sobre",
-		text1:
+		label: "Sobre",
+		title: "Interfaces com intenção.",
+		paragraphs: [
 			"Engenheiro de Software especializado em desenvolvimento Web com React, Next.js e Angular, também com experiência em desenvolvimento Mobile usando Flutter e React Native, construindo aplicações escaláveis em ambientes corporativos e financeiros.",
-		text2:
 			"Tenho sólida experiência no desenvolvimento de aplicações web modernas e plataformas internas suportadas por AWS e GCP. Meu foco está em arquitetura limpa, performance e construção de sistemas front-end escaláveis e de fácil manutenção, com forte atenção à UX e confiabilidade.",
-		text3:
 			"Bacharelado em Ciência da Computação (UTFPR) e Mestrado em Engenharia de Software (IPS, previsão para 2026).",
-		card1_text1: "Experiência",
-		card1_text2: "4+ anos",
-		card2_text1: "Foco",
-		card2_text2: "Mobile • Web • UX",
-		card3_text1: "Stack",
-		card3_text2: "Flutter • React Native • React • Next.js",
+		],
+		stats: [
+			{ value: "4+", label: "Anos de experiência" },
+			{ value: "Mobile · Web · UX", label: "Foco" },
+			{ value: "Licenciatura + Mestrado", label: "Formação" },
+		],
+		stackLabel: "Stack principal",
+		stack: [
+			"Flutter",
+			"React Native",
+			"React",
+			"Next.js",
+			"Angular",
+			"TypeScript",
+			"Node.js",
+			"AWS",
+			"GCP",
+		],
 	},
 	experience: {
-		title: "Experiência",
+		label: "Experiência",
+		title: "Uma trajetória focada.",
+		subtitle:
+			"Construindo produtos em ambientes financeiros, corporativos e mobile.",
+		present: "Presente",
+		ongoing: "Em andamento",
 		items: [
 			{
-				role: "Frontend Developer",
+				role: "Desenvolvedor Frontend",
 				company: "ISQe",
-				period: "Jul 2026 - Presente",
-				duration: "--",
+				period: "Jul 2026 — Presente",
+				duration: "Em andamento",
 				stack: [
 					"TypeScript",
 					"React.js",
@@ -42,14 +80,14 @@ export const pt = {
 					"AWS",
 					"H2",
 					"Kotlin",
-					"AWS",
 				],
-				description: "",
+				description:
+					"Desenvolvimento front-end com uma stack moderna de React, UI orientada a componentes e serviços cloud-native.",
 			},
 			{
 				role: "Engenheiro de Software",
 				company: "Stellantis",
-				period: "Out 2024 - Fev 2026",
+				period: "Out 2024 — Fev 2026",
 				duration: "1 ano e 6 meses",
 				stack: [
 					"TypeScript",
@@ -66,12 +104,12 @@ export const pt = {
 					"Snowflake Cloud",
 				],
 				description:
-					"Trabalhei em duas iniciativas principais num ambiente de serviços financeiros: uma de application security and legacy modernization effort, e outra de data infrastructure, ETL engineering e desenvolvimento de software. O foco foi melhorar a segurança, confiabilidade, escalabilidade e eficiência operacional dos sistemas e plataformas de dados.",
+					"Trabalhei em duas iniciativas principais num ambiente de serviços financeiros: uma de application security e modernização de sistemas legados, e outra de infraestrutura de dados, engenharia de ETL e desenvolvimento de software. O foco foi melhorar a segurança, confiabilidade, escalabilidade e eficiência operacional dos sistemas e plataformas de dados.",
 			},
 			{
 				role: "Engenheiro de Software",
 				company: "Silicon Village",
-				period: "Dez 2023 - Out 2024",
+				period: "Dez 2023 — Out 2024",
 				duration: "11 meses",
 				stack: [
 					"Flutter",
@@ -94,7 +132,7 @@ export const pt = {
 			{
 				role: "Desenvolvedor Mobile",
 				company: "AsapTech",
-				period: "Dez 2023 - Jun 2024",
+				period: "Dez 2023 — Jun 2024",
 				duration: "7 meses",
 				stack: [
 					"Flutter",
@@ -110,31 +148,35 @@ export const pt = {
 			},
 		],
 	},
-	contact: {
-		designed: "Projetado e desenvolvido com Next.js e Tailwind CSS.",
-		socials: {
-			github: {
-				icon: "github",
-				href: "https://github.com/thiagodalsanto",
-				label: "Github",
-				handle: "thiagodalsanto",
-			},
-			email: {
-				icon: "mail",
-				href: "mailto:thiagodalsantodaluz@gmail.com",
-				label: "Email",
-				handle: "thiagodalsantodaluz@gmail.com",
-			},
-			linkedin: {
-				icon: "linkedin",
-				href: "https://www.linkedin.com/in/thiagodalsanto",
-				label: "LinkedIn",
-				handle: "thiagodalsanto",
-			},
-		},
+	work: {
+		label: "Projetos",
+		title: "Trabalhos selecionados.",
+		subtitle:
+			"Dois projetos publicados — um produto de dados e um kit de acessibilidade.",
+		count: "02 projetos",
+		viewCase: "Ver estudo de caso",
+		moreOnGithub: "Mais no GitHub",
+	},
+	project: {
+		back: "Voltar aos projetos",
+		caseStudy: "Estudo de caso",
+		overview: "Visão geral",
+		details: "Detalhes",
+		stack: "Stack",
+		links: "Links",
+		year: "Ano",
+		type: "Tipo",
+		live: "Demo ao vivo",
+		source: "Código",
+		package: "Pacote",
+		next: "Próximo projeto",
 	},
 	education: {
-		title: "Educação",
+		label: "Educação",
+		title: "Fundamentos.",
+		subtitle:
+			"Formação em ciência da computação e pesquisa em engenharia de software.",
+		thesisLabel: "Pesquisa",
 		items: [
 			{
 				course: "Mestrado em Engenharia de Software",
@@ -153,12 +195,16 @@ export const pt = {
 		],
 	},
 	publications: {
-		title: "Publicações",
+		label: "Pesquisa",
+		title: "Publicações.",
+		subtitle:
+			"Pesquisa publicada sobre interfaces, performance web e visão computacional aplicada.",
+		count: "05 artigos",
 		viewProfile: "Ver perfil completo no Google Scholar",
 		items: [
 			{
 				title:
-					"Desenvolvimento de uma aplicaçao para gerenciamento de dados de hortas automatizadas indoor",
+					"Desenvolvimento de uma aplicação para gerenciamento de dados de hortas automatizadas indoor",
 				publisher: "Sociedade Brasileira de Computação (SBC)",
 				date: "10/2023",
 				url: "https://sol.sbc.org.br/index.php/latinoware/article/view/26097",
@@ -192,5 +238,38 @@ export const pt = {
 				url: "https://sevenpubl.com.br/anais7/article/view/4290",
 			},
 		],
+	},
+	contact: {
+		label: "Contato",
+		titleLine1: "Vamos criar algo",
+		titleLine2: "que valha a pena usar.",
+		text: "Tem um produto, uma equipe ou uma ideia que vale a pena? Minha caixa de entrada está aberta.",
+		emailCta: "Iniciar uma conversa",
+		socials: {
+			github: {
+				label: "GitHub",
+				handle: "thiagodalsanto",
+				href: "https://github.com/thiagodalsanto",
+			},
+			email: {
+				label: "Email",
+				handle: "thiagodalsantodaluz@gmail.com",
+				href: "mailto:thiagodalsantodaluz@gmail.com",
+			},
+			linkedin: {
+				label: "LinkedIn",
+				handle: "thiagodalsanto",
+				href: "https://www.linkedin.com/in/thiagodalsanto",
+			},
+		},
+	},
+	footer: {
+		designed: "Projetado e desenvolvido com Next.js e Tailwind CSS.",
+		backToTop: "Voltar ao topo",
+	},
+	notFound: {
+		title: "Página não encontrada.",
+		text: "A página que você procura não existe — ou mudou de lugar.",
+		back: "Voltar ao início",
 	},
 };

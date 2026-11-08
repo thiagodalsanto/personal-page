@@ -1,39 +1,77 @@
 export const en = {
+	meta: {
+		title: "Thiago Dal Santo — Software Engineer",
+		description:
+			"Software engineer specializing in web and mobile development with React, Next.js, Angular, Flutter and React Native. 4+ years building scalable products for enterprise and financial teams.",
+		ogAlt: "Thiago Dal Santo — Software Engineer",
+	},
 	nav: {
 		about: "About",
+		work: "Work",
 		experience: "Experience",
 		education: "Education",
-		publications: "Publications",
-		projects: "Projects",
+		publications: "Research",
 		contact: "Contact",
+		menu: "Open menu",
+		close: "Close menu",
+		language: "Change language",
+		theme: "Toggle theme",
+		skip: "Skip to content",
 	},
 	hero: {
+		eyebrow: "Portfolio — 2026",
 		role: "Web & Mobile Developer",
-		name: "Thiago Dal Santo",
+		nameFirst: "Thiago",
+		nameLast: "Dal Santo",
+		intro:
+			"Software engineer building fast, accessible web and mobile products for enterprise and financial teams — React, Next.js, Flutter and a strong eye for UX.",
+		ctaWork: "Selected work",
+		ctaContact: "Get in touch",
+		scroll: "Scroll to explore",
+		badgeRing: "WEB · MOBILE · USER EXPERIENCE · ",
+		badgeTop: "years",
+		badgeBottom: "of experience",
+		index: "01 — 06",
 	},
 	about: {
-		title: "About",
-		text1:
+		label: "About",
+		title: "Interfaces with intent.",
+		paragraphs: [
 			"Software Engineer specializing in Web development with React, Next.js, and Angular, also experienced in Mobile development using Flutter and React Native, building scalable applications across enterprise and financial environments.",
-		text2:
 			"I have strong experience developing modern web applications and internal platforms supported by AWS & GCP. My focus is on clean architecture, performance, and building scalable, maintainable front-end systems with strong UX and reliability.",
-		text3:
 			"BSc in Computer Science (UTFPR) and MSc in Software Engineering (IPS, expected 2026).",
-		card1_text1: "Experience",
-		card1_text2: "4+ Years",
-		card2_text1: "Focus",
-		card2_text2: " Mobile • Web • UX",
-		card3_text1: "Stack",
-		card3_text2: "Flutter • React Native • React • Next.js",
+		],
+		stats: [
+			{ value: "4+", label: "Years of experience" },
+			{ value: "Mobile · Web · UX", label: "Focus" },
+			{ value: "BSc + MSc", label: "Education" },
+		],
+		stackLabel: "Core stack",
+		stack: [
+			"Flutter",
+			"React Native",
+			"React",
+			"Next.js",
+			"Angular",
+			"TypeScript",
+			"Node.js",
+			"AWS",
+			"GCP",
+		],
 	},
 	experience: {
-		title: "Experience",
+		label: "Experience",
+		title: "A focused path.",
+		subtitle:
+			"Building products across financial, enterprise and mobile environments.",
+		present: "Present",
+		ongoing: "Ongoing",
 		items: [
 			{
 				role: "Frontend Developer",
 				company: "ISQe",
-				period: "Jul 2026 - Present",
-				duration: "--",
+				period: "Jul 2026 — Present",
+				duration: "Ongoing",
 				stack: [
 					"TypeScript",
 					"React.js",
@@ -42,14 +80,14 @@ export const en = {
 					"AWS",
 					"H2",
 					"Kotlin",
-					"AWS",
 				],
-				description: "",
+				description:
+					"Front-end development with a modern React stack, component-driven UI and cloud-native services.",
 			},
 			{
 				role: "Software Engineer",
 				company: "Stellantis",
-				period: "Oct 2024 - Feb 2026",
+				period: "Oct 2024 — Feb 2026",
 				duration: "1 yr 6 mos",
 				stack: [
 					"TypeScript",
@@ -71,7 +109,7 @@ export const en = {
 			{
 				role: "Software Engineer",
 				company: "Silicon Village",
-				period: "Dec 2023 - Oct 2024",
+				period: "Dec 2023 — Oct 2024",
 				duration: "11 mos",
 				stack: [
 					"Flutter",
@@ -94,7 +132,7 @@ export const en = {
 			{
 				role: "Mobile Developer",
 				company: "AsapTech",
-				period: "Dec 2023 - Jun 2024",
+				period: "Dec 2023 — Jun 2024",
 				duration: "7 mos",
 				stack: [
 					"Flutter",
@@ -110,31 +148,35 @@ export const en = {
 			},
 		],
 	},
-	contact: {
-		designed: "Designed & developed with Next.js & Tailwind CSS.",
-		socials: {
-			github: {
-				icon: "github",
-				href: "https://github.com/thiagodalsanto",
-				label: "Github",
-				handle: "thiagodalsanto",
-			},
-			email: {
-				icon: "mail",
-				href: "mailto:thiagodalsantodaluz@gmail.com",
-				label: "Email",
-				handle: "thiagodalsantodaluz@gmail.com",
-			},
-			linkedin: {
-				icon: "linkedin",
-				href: "https://www.linkedin.com/in/thiagodalsanto",
-				label: "LinkedIn",
-				handle: "thiagodalsanto",
-			},
-		},
+	work: {
+		label: "Work",
+		title: "Selected work.",
+		subtitle:
+			"Two published projects — a data product and an accessibility toolkit.",
+		count: "02 projects",
+		viewCase: "View case study",
+		moreOnGithub: "More on GitHub",
+	},
+	project: {
+		back: "Back to work",
+		caseStudy: "Case study",
+		overview: "Overview",
+		details: "Details",
+		stack: "Stack",
+		links: "Links",
+		year: "Year",
+		type: "Type",
+		live: "Live demo",
+		source: "Source",
+		package: "Package",
+		next: "Next project",
 	},
 	education: {
-		title: "Education",
+		label: "Education",
+		title: "Foundations.",
+		subtitle:
+			"Formal training in computer science and software engineering research.",
+		thesisLabel: "Research",
 		items: [
 			{
 				course: "Master in Software Engineering",
@@ -153,8 +195,12 @@ export const en = {
 		],
 	},
 	publications: {
-		title: "Publications",
-		viewProfile: "View Full Profile on Google Scholar",
+		label: "Research",
+		title: "Publications.",
+		subtitle:
+			"Peer-reviewed research on interfaces, web performance and applied computer vision.",
+		count: "05 papers",
+		viewProfile: "View full profile on Google Scholar",
 		items: [
 			{
 				title:
@@ -192,5 +238,38 @@ export const en = {
 				url: "https://sevenpubl.com.br/anais7/article/view/4290",
 			},
 		],
+	},
+	contact: {
+		label: "Contact",
+		titleLine1: "Let's build something",
+		titleLine2: "worth using.",
+		text: "Have a product, a team or an idea worth pursuing? My inbox is open.",
+		emailCta: "Start a conversation",
+		socials: {
+			github: {
+				label: "GitHub",
+				handle: "thiagodalsanto",
+				href: "https://github.com/thiagodalsanto",
+			},
+			email: {
+				label: "Email",
+				handle: "thiagodalsantodaluz@gmail.com",
+				href: "mailto:thiagodalsantodaluz@gmail.com",
+			},
+			linkedin: {
+				label: "LinkedIn",
+				handle: "thiagodalsanto",
+				href: "https://www.linkedin.com/in/thiagodalsanto",
+			},
+		},
+	},
+	footer: {
+		designed: "Designed & developed with Next.js & Tailwind CSS.",
+		backToTop: "Back to top",
+	},
+	notFound: {
+		title: "Page not found.",
+		text: "The page you're looking for doesn't exist — or it moved.",
+		back: "Back to home",
 	},
 };
