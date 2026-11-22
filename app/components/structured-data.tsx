@@ -37,7 +37,7 @@ export function HomeStructuredData({
 		alumniOf: [
 			{
 				"@type": "CollegeOrUniversity",
-				name: "Universidade Politécnica de Setúbal (UNIPS)",
+				name: "Polytechnic University of Setúbal (UNIPS)",
 			},
 			{
 				"@type": "CollegeOrUniversity",

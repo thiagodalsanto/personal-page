@@ -227,7 +227,7 @@ export const en = {
 		items: [
 			{
 				course: "MSc in Software Engineering",
-				school: "Universidade Politécnica de Setúbal (UNIPS)",
+				school: "Polytechnic University of Setúbal (UNIPS)",
 				period: "2024 — 2026",
 				description:
 					'Research thesis: "A Component-Based UI Framework for Personalization of Post-Stroke Mobile Applications"',
