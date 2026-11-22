@@ -168,7 +168,12 @@
 			width: var(--rail-w);
 			flex-direction: column;
 			border-right: 1px solid rgb(var(--line) / 0.14);
-			background-color: rgb(var(--surface) / 0.45);
+			/* Opaque so the tinted section bands never show through the pillar. */
+			background-color: rgb(var(--paper));
+			background-image: linear-gradient(
+				rgb(var(--surface) / 0.45),
+				rgb(var(--surface) / 0.45)
+			);
 			padding: 2rem 1.75rem 1.5rem;
 		}
 	}
@@ -888,47 +893,6 @@
 		will-change: transform;
 	}
 
-	.page-rail {
-		position: fixed;
-		inset-block: 0;
-		right: 0;
-		z-index: 90;
-		width: 0.75rem;
-		pointer-events: none;
-	}
-
-	.page-rail-track,
-	.page-rail-fill {
-		position: absolute;
-		inset-block: 0;
-		right: 0;
-		width: 1px;
-		transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-	}
-
-	.page-rail-track {
-		background-color: rgb(var(--line) / 0.1);
-	}
-
-	.page-rail-fill {
-		transform: scaleY(0);
-		transform-origin: top;
-		background-color: rgb(var(--accent));
-		will-change: transform;
-	}
-
-	@media (hover: hover) and (pointer: fine) {
-		.page-rail {
-			pointer-events: auto;
-		}
-
-		.page-rail:hover .page-rail-track,
-		.page-rail:hover .page-rail-fill,
-		.page-rail[data-dragging="true"] .page-rail-track,
-		.page-rail[data-dragging="true"] .page-rail-fill {
-			width: 3px;
-		}
-	}
 
 	.copy-email {
 		display: inline-flex;
