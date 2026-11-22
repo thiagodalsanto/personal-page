@@ -303,7 +303,6 @@ export const zh = {
 		},
 	},
 	footer: {
-		designed: "使用 Next.js 设计与开发。",
 		backToTop: "回到顶部",
 	},
 	notFound: {

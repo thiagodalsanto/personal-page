@@ -313,7 +313,6 @@ export const es = {
 		},
 	},
 	footer: {
-		designed: "Diseñado y desarrollado con Next.js.",
 		backToTop: "Volver arriba",
 	},
 	notFound: {
