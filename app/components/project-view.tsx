@@ -15,7 +15,6 @@ import {
 } from "../lib/site";
 import { LocaleEffect } from "./locale-effect";
 import { Reveal } from "./reveal";
-import { SectionLabel } from "./section-label";
 import { SiteFooter } from "./site-footer";
 import { SiteHeader } from "./site-header";
 
@@ -40,8 +39,7 @@ export function ProjectView({
 		name: project.title,
 		description: detail.description,
 		url: absoluteUrl(localeHref(lang, `projects/${project.slug}`)),
-		image: absoluteUrl(project.image),
-		datePublished: project.date,
+		...(project.image ? { image: absoluteUrl(project.image) } : {}),
 		keywords: project.technologies.join(", "),
 		author: {
 			"@type": "Person",
@@ -55,190 +53,179 @@ export function ProjectView({
 			<a href="#main" className="skip-link">
 				{dict.nav.skip}
 			</a>
-			<div className="page-frame hidden xl:block" aria-hidden="true" />
+			<span id="top" />
 
 			<SiteHeader lang={lang} dict={dict} />
 
-			<main id="main" className="pt-[72px]">
-				<section className="shell pb-14 pt-10 md:pb-20 md:pt-16">
-					<Link
-						href={`${home}#work`}
-						className="group inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.13em] text-muted transition-colors hover:text-ink"
-					>
-						<ArrowLeft
-							size={13}
-							className="transition-transform duration-300 group-hover:-translate-x-1"
-						/>
-						{dict.project.back}
-					</Link>
+			<main id="main" className="with-rail">
+				<section className="shell pb-10 pt-8 md:pb-14 md:pt-12">
+					<div className="flex flex-wrap items-center justify-between gap-3 border-b border-line/15 pb-4">
+						<Link
+							href={`${home}#work`}
+							className="group inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.12em] text-muted transition-colors hover:text-ink"
+						>
+							<ArrowLeft
+								size={13}
+								className="transition-transform duration-300 group-hover:-translate-x-1"
+							/>
+							{dict.project.back}
+						</Link>
+						<p className="eyebrow text-muted">
+							{dict.project.caseStudy} 0{index + 1} /{" "}
+							{project.status === "ongoing"
+								? dict.work.ongoing
+								: dict.work.shipped}
+						</p>
+					</div>
 
-					<div className="mt-12 grid gap-10 lg:grid-cols-12 lg:gap-8">
-						<div className="lg:col-span-9">
-							<p className="eyebrow flex items-center gap-3 text-muted">
-								<span className="text-accent">
-									({String(index + 1).padStart(2, "0")})
-								</span>
-								{dict.project.caseStudy}
-								<span className="h-px w-8 bg-line/30" />
-								<span>{project.year}</span>
-							</p>
-							<h1 className="display mt-6 text-[clamp(2.8rem,7.5vw,7rem)]">
+					<div className="mt-9 grid gap-8 lg:grid-cols-12 lg:gap-8">
+						<div className="lg:col-span-8">
+							<p className="eyebrow text-accent">{detail.kind}</p>
+							<h1 className="display mt-4 text-[clamp(2.5rem,6.2vw,5.8rem)]">
 								{project.title}
 							</h1>
-							<p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted md:text-xl">
+							<p className="mt-6 max-w-2xl text-base leading-relaxed text-muted md:text-lg">
 								{detail.description}
 							</p>
 						</div>
 
-						<aside className="lg:col-span-3">
-							<dl className="border-t border-line/25">
-								<div className="flex items-baseline justify-between gap-4 border-b border-line/20 py-3">
-									<dt className="eyebrow text-muted">
-										{dict.project.year}
-									</dt>
-									<dd className="text-sm">{project.year}</dd>
-								</div>
-								<div className="flex items-baseline justify-between gap-4 border-b border-line/20 py-3">
-									<dt className="eyebrow text-muted">
-										{dict.project.type}
-									</dt>
-									<dd className="max-w-[11rem] text-right text-sm">
-										{detail.kind}
+						<aside className="lg:col-span-4">
+							<dl className="fact-list">
+								<div className="fact-row">
+									<dt>{dict.project.status}</dt>
+									<dd>
+										{project.status === "ongoing"
+											? dict.work.ongoing
+											: dict.work.shipped}
 									</dd>
+								</div>
+								<div className="fact-row">
+									<dt>{dict.project.type}</dt>
+									<dd>{detail.kind}</dd>
 								</div>
 							</dl>
 
-							<div className="mt-5 flex flex-col gap-2">
+							<div className="mt-4 flex flex-col gap-2">
 								{project.url && (
 									<a
 										href={project.url}
 										target="_blank"
 										rel="noreferrer"
-										className="group flex h-11 items-center justify-between gap-3 bg-ink px-4 font-mono text-[10px] uppercase tracking-[0.12em] text-paper transition-colors hover:bg-accent hover:text-accent-ink"
+										className="group flex h-10 items-center justify-between gap-3 bg-ink px-4 font-mono text-[9px] uppercase tracking-[0.1em] text-paper transition-colors hover:bg-accent hover:text-accent-ink"
 									>
-										{dict.project[project.primaryLabel]}
+										{dict.project[project.primaryLabel ?? "live"]}
 										<ArrowUpRight
-											size={14}
+											size={13}
 											className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
 										/>
 									</a>
 								)}
-								<a
-									href={`https://github.com/${project.repository}`}
-									target="_blank"
-									rel="noreferrer"
-									className="group flex h-11 items-center justify-between gap-3 border border-line/25 px-4 font-mono text-[10px] uppercase tracking-[0.12em] text-ink transition-colors hover:border-ink"
-								>
-									{dict.project.source}
-									<ArrowUpRight
-										size={14}
-										className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-									/>
-								</a>
+								{project.repository ? (
+									<a
+										href={`https://github.com/${project.repository}`}
+										target="_blank"
+										rel="noreferrer"
+										className="group flex h-10 items-center justify-between gap-3 border border-line/25 px-4 font-mono text-[9px] uppercase tracking-[0.1em] text-ink transition-colors hover:border-ink"
+									>
+										{dict.project.source}
+										<ArrowUpRight
+											size={13}
+											className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+										/>
+									</a>
+								) : null}
 							</div>
 						</aside>
 					</div>
 				</section>
 
-				<section className="shell">
-					<Reveal>
-						<div className="image-frame grain relative aspect-[16/10] overflow-hidden border border-line/15">
-							<Image
-								src={project.image}
-								alt={project.imageAlt}
-								fill
-								priority
-								sizes="(min-width: 1280px) 1200px, 100vw"
-								className="object-cover object-top"
-							/>
-						</div>
-					</Reveal>
-				</section>
-
-				<section className="section">
-					<div className="shell grid gap-12 lg:grid-cols-12 lg:gap-8">
-						<aside className="lg:col-span-3">
-							<div className="lg:sticky lg:top-28">
-								<SectionLabel index="CASE">
-									{dict.project.overview}
-								</SectionLabel>
+				{project.image ? (
+					<section className="shell">
+						<Reveal>
+							<div className="image-frame relative aspect-[16/9] border border-line/15">
+								<Image
+									src={project.image}
+									alt={project.imageAlt ?? project.title}
+									fill
+									priority
+									sizes="(min-width: 1280px) 1200px, 100vw"
+									className="object-cover object-top"
+								/>
 							</div>
-						</aside>
+						</Reveal>
+					</section>
+				) : null}
 
-						<div className="lg:col-span-9">
-							<Reveal>
-								<p className="max-w-3xl text-xl leading-relaxed tracking-[-0.01em] md:text-2xl">
-									{detail.overview}
-								</p>
-							</Reveal>
+				<section className="shell section grid gap-10 lg:grid-cols-12 lg:gap-8">
+					<aside className="lg:col-span-3">
+						<p className="eyebrow text-accent">01 / {dict.project.overview}</p>
+					</aside>
 
-							{detail.sections.map((section, sectionIndex) => (
-								<Reveal
-									key={section.title}
-									delay={sectionIndex * 80}
-								>
-									<div className="mt-14 border-t border-line/20 pt-6">
-										<div className="flex items-baseline gap-4">
-											<span className="eyebrow text-accent">
-												0{sectionIndex + 1}
-											</span>
-											<h2 className="text-lg font-medium md:text-xl">
-												{section.title}
-											</h2>
-										</div>
-										<ul className="mt-6 space-y-3">
-											{section.items.map((item) => (
-												<li
-													key={item}
-													className="flex max-w-2xl gap-4 text-sm leading-relaxed text-muted md:text-base"
-												>
-													<span className="mt-2 h-1 w-1 shrink-0 bg-accent" />
-													{item}
-												</li>
-											))}
-										</ul>
+					<div className="lg:col-span-8 lg:col-start-5">
+						<Reveal>
+							<p className="max-w-3xl text-[clamp(1.1rem,1.7vw,1.45rem)] leading-[1.55] tracking-[-0.015em]">
+								{detail.overview}
+							</p>
+						</Reveal>
+
+						{detail.sections.map((section, sectionIndex) => (
+							<Reveal key={section.title} delay={sectionIndex * 70}>
+								<div className="mt-12 border-t border-line/15 pt-5">
+									<div className="flex items-baseline gap-4">
+										<span className="font-mono text-[10px] text-accent">
+											0{sectionIndex + 2}
+										</span>
+										<h2 className="text-lg font-medium tracking-[-0.02em] md:text-xl">
+											{section.title}
+										</h2>
 									</div>
-								</Reveal>
-							))}
-
-							<Reveal>
-								<div className="mt-14 border-t border-line/20 pt-6">
-									<h2 className="eyebrow text-muted">
-										{dict.project.stack}
-									</h2>
-									<div className="mt-5 flex flex-wrap gap-2">
-										{project.technologies.map((tech) => (
-											<span
-												key={tech}
-												className="border border-line/20 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.1em] text-muted"
+									<ul className="mt-5 space-y-3">
+										{section.items.map((item) => (
+											<li
+												key={item}
+												className="flex max-w-2xl gap-3 text-sm leading-relaxed text-muted"
 											>
-												{tech}
-											</span>
+												<span className="mt-2 h-[3px] w-[3px] shrink-0 bg-accent" />
+												{item}
+											</li>
 										))}
-									</div>
+									</ul>
 								</div>
 							</Reveal>
-						</div>
+						))}
+
+						<Reveal>
+							<div className="mt-12 border-t border-line/15 pt-5">
+								<h2 className="eyebrow text-muted">{dict.project.stack}</h2>
+								<div className="mt-4 flex flex-wrap gap-1.5">
+									{project.technologies.map((tech) => (
+										<span key={tech} className="tag">
+											{tech}
+										</span>
+									))}
+								</div>
+							</div>
+						</Reveal>
 					</div>
 				</section>
 
 				<section className="border-t border-line/15">
-					<div className="shell py-14 md:py-20">
+					<div className="shell py-12 md:py-16">
 						<p className="eyebrow text-muted">{dict.project.next}</p>
 						<Link
 							href={localeHref(lang, `projects/${nextProject.slug}`)}
-							className="group mt-6 flex flex-col justify-between gap-6 border-t border-line/20 pt-6 sm:flex-row sm:items-end"
+							className="group mt-5 flex flex-col justify-between gap-6 border-t border-line/15 pt-6 sm:flex-row sm:items-end"
 						>
 							<div>
-								<h2 className="display max-w-4xl text-[clamp(2.2rem,6vw,5.5rem)] leading-[0.92] transition-colors duration-300 group-hover:text-accent">
+								<h2 className="display max-w-4xl text-[clamp(2.2rem,5.5vw,5rem)] transition-colors duration-300 group-hover:text-accent">
 									{nextProject.title}
 								</h2>
 								<p className="mt-3 max-w-xl text-sm text-muted">
 									{nextDetail.description}
 								</p>
 							</div>
-							<span className="grid h-14 w-14 shrink-0 place-items-center rounded-full border border-line/25 transition-all duration-300 group-hover:border-accent group-hover:bg-accent group-hover:text-accent-ink">
-								<ArrowUpRight size={20} strokeWidth={1.5} />
+							<span className="work-arrow h-12 w-12 shrink-0">
+								<ArrowUpRight size={18} strokeWidth={1.5} />
 							</span>
 						</Link>
 					</div>

@@ -27,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		const languages = alternatesFor(path);
 		return locales.map((lang) => ({
 			url: absoluteUrl(localeHref(lang, path)),
-			lastModified: new Date(project.date),
+			lastModified: new Date(),
 			changeFrequency: "yearly" as const,
 			priority: 0.7,
 			alternates: { languages },

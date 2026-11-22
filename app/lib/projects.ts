@@ -2,11 +2,6 @@ import type { Locale } from "./site";
 
 type Localized<T> = Record<Locale, T>;
 
-export type ProjectSection = {
-	title: Localized<string>;
-	items: Localized<string[]>;
-};
-
 export type ProjectDetail = {
 	kind: string;
 	description: string;
@@ -17,292 +12,334 @@ export type ProjectDetail = {
 export type Project = {
 	slug: string;
 	title: string;
-	date: string;
-	year: string;
-	image: string;
-	imageWidth: number;
-	imageHeight: number;
-	imageAlt: string;
+	status: "ongoing" | "shipped";
+	image?: string;
+	imageWidth?: number;
+	imageHeight?: number;
+	imageAlt?: string;
 	url?: string;
-	repository: string;
-	primaryLabel: "live" | "package";
+	repository?: string;
+	primaryLabel?: "live" | "package";
 	technologies: string[];
 	detail: Localized<ProjectDetail>;
 };
 
-const bricsSections: ProjectSection[] = [
-	{
-		title: {
-			en: "What's inside",
-			pt: "O que tem dentro",
-			es: "Qué incluye",
-			zh: "内容亮点",
-		},
-		items: {
-			en: [
-				"Side-by-side comparison of all BRICS members.",
-				"Population, area, density, languages and currencies in one view.",
-				"Geographic distribution and global metrics.",
-				"Live data from REST Countries API v5.",
-				"Responsive, accessible interface built with ShadCN and TanStack Query.",
-			],
-			pt: [
-				"Comparação lado a lado entre todos os membros do BRICS.",
-				"População, área, densidade, idiomas e moedas em uma única visão.",
-				"Distribuição geográfica e métricas globais.",
-				"Dados em tempo real da REST Countries API v5.",
-				"Interface responsiva e acessível construída com ShadCN e TanStack Query.",
-			],
-			es: [
-				"Comparación lado a lado de todos los miembros del BRICS.",
-				"Población, superficie, densidad, idiomas y monedas en una sola vista.",
-				"Distribución geográfica y métricas globales.",
-				"Datos en vivo de la REST Countries API v5.",
-				"Interfaz responsiva y accesible construida con ShadCN y TanStack Query.",
-			],
-			zh: [
-				"所有金砖国家的并排对比。",
-				"在一处查看人口、面积、密度、语言和货币。",
-				"地理分布与全球指标。",
-				"来自 REST Countries API v5 的实时数据。",
-				"使用 ShadCN 和 TanStack Query 构建的响应式、无障碍界面。",
-			],
-		},
-	},
-];
-
-const flutterSections: ProjectSection[] = [
-	{
-		title: {
-			en: "Component library",
-			pt: "Biblioteca de componentes",
-			es: "Biblioteca de componentes",
-			zh: "组件库",
-		},
-		items: {
-			en: [
-				"Inputs: Textfield, Checkbox, Radio, Slider, Switch, Dropdown and TimePicker.",
-				"Navigation: TabBar and BottomBar.",
-				"Interaction: Button, BigButton, TextButton and IconButton.",
-				"Feedback: LinearProgressIndicator and AlertDialog.",
-			],
-			pt: [
-				"Entrada: Textfield, Checkbox, Radio, Slider, Switch, Dropdown e TimePicker.",
-				"Navegação: TabBar e BottomBar.",
-				"Interação: Button, BigButton, TextButton e IconButton.",
-				"Feedback: LinearProgressIndicator e AlertDialog.",
-			],
-			es: [
-				"Entrada: Textfield, Checkbox, Radio, Slider, Switch, Dropdown y TimePicker.",
-				"Navegación: TabBar y BottomBar.",
-				"Interacción: Button, BigButton, TextButton e IconButton.",
-				"Feedback: LinearProgressIndicator y AlertDialog.",
-			],
-			zh: [
-				"输入：Textfield、Checkbox、Radio、Slider、Switch、Dropdown 和 TimePicker。",
-				"导航：TabBar 和 BottomBar。",
-				"交互：Button、BigButton、TextButton 和 IconButton。",
-				"反馈：LinearProgressIndicator 和 AlertDialog。",
-			],
-		},
-	},
-	{
-		title: {
-			en: "Accessibility first",
-			pt: "Acessibilidade primeiro",
-			es: "Accesibilidad primero",
-			zh: "无障碍优先",
-		},
-		items: {
-			en: [
-				"Touch-tolerant widgets with configurable size, padding and colors.",
-				"Presets for fine motor, severe motor and aphasia-oriented configurations.",
-				"Draggable floating assistive button that opens the runtime configuration UI.",
-			],
-			pt: [
-				"Widgets tolerantes ao toque com tamanho, espaçamento e cores configuráveis.",
-				"Presets para dificuldade motora fina, motora severa e configurações orientadas a afasia.",
-				"Botão assistivo flutuante e arrastável que abre a UI de configuração em tempo de execução.",
-			],
-			es: [
-				"Widgets tolerantes al toque con tamaño, espaciado y colores configurables.",
-				"Presets para dificultad motora fina, motora severa y configuraciones orientadas a la afasia.",
-				"Botón asistivo flotante y arrastrable que abre la UI de configuración en tiempo de ejecución.",
-			],
-			zh: [
-				"可配置尺寸、内边距和颜色的触控友好组件。",
-				"面向精细动作、严重运动障碍和失语症的预设配置。",
-				"可拖动的悬浮辅助按钮，用于打开运行时配置界面。",
-			],
-		},
-	},
-	{
-		title: {
-			en: "Runtime control",
-			pt: "Controle em tempo de execução",
-			es: "Control en tiempo de ejecución",
-			zh: "运行时控制",
-		},
-		items: {
-			en: [
-				"Configuration through UserComponentProvider.",
-				"Optional haptic and visual feedback.",
-				"Optional activation delay with pressDelay.",
-			],
-			pt: [
-				"Configuração através do UserComponentProvider.",
-				"Feedback háptico e visual opcionais.",
-				"Atraso de ativação opcional com pressDelay.",
-			],
-			es: [
-				"Configuración mediante UserComponentProvider.",
-				"Feedback háptico y visual opcionales.",
-				"Retardo de activación opcional con pressDelay.",
-			],
-			zh: [
-				"通过 UserComponentProvider 进行配置。",
-				"可选的触觉与视觉反馈。",
-				"通过 pressDelay 设置可选的激活延迟。",
-			],
-		},
-	},
-];
-
-function makeDetail(
-	sections: ProjectSection[],
-	detail: Localized<Omit<ProjectDetail, "sections">>,
-): Localized<ProjectDetail> {
-	return {
-		en: {
-			...detail.en,
-			sections: sections.map((section) => ({
-				title: section.title.en,
-				items: section.items.en,
-			})),
-		},
-		pt: {
-			...detail.pt,
-			sections: sections.map((section) => ({
-				title: section.title.pt,
-				items: section.items.pt,
-			})),
-		},
-		es: {
-			...detail.es,
-			sections: sections.map((section) => ({
-				title: section.title.es,
-				items: section.items.es,
-			})),
-		},
-		zh: {
-			...detail.zh,
-			sections: sections.map((section) => ({
-				title: section.title.zh,
-				items: section.items.zh,
-			})),
-		},
-	};
-}
-
 export const projects: Project[] = [
 	{
-		slug: "bricsinsight",
-		title: "BricsInsights",
-		date: "2026-06-18",
-		year: "2026",
-		image: "/projects/bricsinsight.png",
-		imageWidth: 1899,
-		imageHeight: 956,
-		imageAlt:
-			"BricsInsights dashboard showing comparative data visualisations for BRICS countries",
-		url: "https://thiagodalsanto.github.io/bricsinsight/",
-		repository: "thiagodalsanto/bricsinsight",
-		primaryLabel: "live",
+		slug: "the-verdict",
+		title: "The Verdict",
+		status: "ongoing",
 		technologies: [
 			"TypeScript",
-			"React",
-			"Vite",
-			"Tailwind CSS",
-			"ShadCN",
-			"TanStack Query",
-			"Lucide React",
-			"REST Countries",
+			"Next.js",
+			"LLM orchestration",
+			"Source verification",
+			"Automated publishing",
 		],
-		detail: makeDetail(bricsSections, {
+		detail: {
 			en: {
-				kind: "Open source · Personal project",
+				kind: "Independent product · Ongoing",
 				description:
-					"An interactive dashboard that analyzes data from the BRICS members using visualizations and global metrics.",
+					"A fully automated newspaper where AI reports, verifies and publishes the news — with every claim traced back to its source.",
 				overview:
-					"BRICSInsights is a modern dashboard built with React 19, Vite, TypeScript, ShadCN and Recharts, consuming data from the REST Countries API v5. The application offers in-depth analysis of the population, area, density, languages, currencies and geographic distribution of BRICS countries.",
+					"The Verdict is a newsroom that runs without a newsroom. An automated editorial pipeline gathers information, writes the story, checks each claim against independent sources and publishes only what survives verification. Readers can open any article and see where every fact came from, why it was trusted and what changed along the way.",
+				sections: [
+					{
+						title: "An automated newsroom",
+						items: [
+							"Continuous monitoring of primary sources, wires and public records.",
+							"AI drafting with an editorial structure, not template filling.",
+							"Automatic publication across site, feed and newsletter.",
+							"Every stage leaves a record a human can check.",
+						],
+					},
+					{
+						title: "Verification, not guesswork",
+						items: [
+							"Each claim carries its sources, original quotes and the reasoning behind it.",
+							"Cross-checks against independent coverage before a story ships.",
+							"Confidence and disagreement are shown, never hidden.",
+							"Corrections stay attached to the article instead of disappearing.",
+						],
+					},
+					{
+						title: "Trust the reader can audit",
+						items: [
+							"Sources, evidence and method are one click away.",
+							"Transparent timestamps show how a story evolved.",
+							"No engagement bait and no anonymous claims.",
+							"Built to be audited by readers, not just believed.",
+						],
+					},
+				],
 			},
 			pt: {
-				kind: "Open source · Projeto pessoal",
+				kind: "Produto independente · Em andamento",
 				description:
-					"Um dashboard interativo que analisa dados dos países do BRICS por meio de visualizações e métricas globais.",
+					"Um jornal totalmente automatizado em que a IA apura, verifica e publica as notícias — com cada afirmação rastreada até sua fonte.",
 				overview:
-					"O BRICSInsights é um dashboard moderno construído com React 19, Vite, TypeScript, ShadCN e Recharts, consumindo dados da REST Countries API v5. A aplicação oferece análises aprofundadas sobre população, área, densidade, idiomas, moedas e distribuição geográfica dos países do BRICS.",
+					"The Verdict é uma redação que funciona sem redação. Um pipeline editorial automatizado coleta informações, escreve a matéria, confere cada afirmação contra fontes independentes e publica apenas o que sobrevive à verificação. O leitor pode abrir qualquer artigo e ver de onde veio cada fato, por que ele foi considerado confiável e o que mudou no caminho.",
+				sections: [
+					{
+						title: "Uma redação automatizada",
+						items: [
+							"Monitoramento contínuo de fontes primárias, agências e registros públicos.",
+							"Redação por IA com estrutura editorial, não preenchimento de template.",
+							"Publicação automática no site, no feed e na newsletter.",
+							"Cada etapa deixa um registro que pode ser conferido por humanos.",
+						],
+					},
+					{
+						title: "Verificação, não achismo",
+						items: [
+							"Cada afirmação carrega suas fontes, trechos originais e o raciocínio por trás dela.",
+							"Checagem cruzada com coberturas independentes antes de publicar.",
+							"Nível de confiança e divergências ficam visíveis, nunca escondidos.",
+							"Correções permanecem ligadas ao artigo em vez de desaparecerem.",
+						],
+					},
+					{
+						title: "Confiança que o leitor pode auditar",
+						items: [
+							"Fontes, evidências e método a um clique de distância.",
+							"Carimbos de tempo transparentes mostram como a matéria evoluiu.",
+							"Sem caça-clique e sem afirmações anônimas.",
+							"Feito para ser auditado pelos leitores, não apenas acreditado.",
+						],
+					},
+				],
 			},
 			es: {
-				kind: "Open source · Proyecto personal",
+				kind: "Producto independiente · En curso",
 				description:
-					"Un panel interactivo que analiza datos de los países del BRICS mediante visualizaciones y métricas globales.",
+					"Un periódico totalmente automatizado en el que la IA investiga, verifica y publica las noticias, con cada afirmación rastreada hasta su fuente.",
 				overview:
-					"BRICSInsights es un panel moderno construido con React 19, Vite, TypeScript, ShadCN y Recharts, que consume datos de la REST Countries API v5. La aplicación ofrece un análisis detallado de la población, superficie, densidad, idiomas, monedas y distribución geográfica de los países del BRICS.",
+					"The Verdict es una redacción que funciona sin redacción. Un pipeline editorial automatizado recopila información, escribe la noticia, comprueba cada afirmación contra fuentes independientes y publica solo lo que supera la verificación. El lector puede abrir cualquier artículo y ver de dónde salió cada dato, por qué se consideró fiable y qué cambió por el camino.",
+				sections: [
+					{
+						title: "Una redacción automatizada",
+						items: [
+							"Monitorización continua de fuentes primarias, agencias y registros públicos.",
+							"Redacción con IA y estructura editorial, no relleno de plantillas.",
+							"Publicación automática en web, feed y newsletter.",
+							"Cada etapa deja un registro verificable por personas.",
+						],
+					},
+					{
+						title: "Verificación, no intuición",
+						items: [
+							"Cada afirmación incluye sus fuentes, citas originales y el razonamiento que hay detrás.",
+							"Contraste con coberturas independientes antes de publicar.",
+							"La confianza y las discrepancias se muestran, nunca se ocultan.",
+							"Las correcciones quedan ligadas al artículo en lugar de desaparecer.",
+						],
+					},
+					{
+						title: "Confianza auditable",
+						items: [
+							"Fuentes, evidencia y método a un clic.",
+							"Marcas de tiempo transparentes muestran cómo evolucionó la noticia.",
+							"Sin anzuelos de clics ni afirmaciones anónimas.",
+							"Diseñado para que los lectores lo auditen, no solo para que confíen.",
+						],
+					},
+				],
 			},
 			zh: {
-				kind: "开源 · 个人项目",
+				kind: "独立产品 · 进行中",
 				description:
-					"一个交互式数据仪表盘，通过可视化和全球指标分析金砖国家数据。",
+					"一份完全自动化的报纸：由 AI 采写、核实并发布新闻，每一条结论都可追溯到来源。",
 				overview:
-					"BRICSInsights 是一个使用 React 19、Vite、TypeScript、ShadCN 和 Recharts 构建的现代仪表盘，数据来自 REST Countries API v5。应用深入分析金砖国家的人口、面积、密度、语言、货币和地理分布。",
+					"The Verdict 是一个没有编辑部的编辑部。自动化编辑流水线收集信息、撰写报道、用独立来源逐条核实，只发布经得起验证的内容。读者可以打开任何一篇文章，看到每个事实来自哪里、为什么被采信，以及过程中发生了什么变化。",
+				sections: [
+					{
+						title: "自动化编辑部",
+						items: [
+							"持续监控一手来源、通讯社与公开记录。",
+							"AI 按编辑结构写作，而不是套用模板。",
+							"自动发布到网站、订阅源与邮件通讯。",
+							"每个环节都留下可供人工核查的记录。",
+						],
+					},
+					{
+						title: "核实，而非猜测",
+						items: [
+							"每条结论都附带来源、原文引用与推理过程。",
+							"发布前与独立报道交叉核对。",
+							"置信度与分歧公开展示，绝不隐藏。",
+							"更正会保留在文章上，而不是悄悄消失。",
+						],
+					},
+					{
+						title: "可供读者审计的信任",
+						items: [
+							"来源、证据与方法一键可达。",
+							"透明的时间戳展示报道如何演变。",
+							"没有标题党，没有匿名断言。",
+							"为读者审计而建，而不只是让人相信。",
+						],
+					},
+				],
 			},
-		}),
+		},
 	},
 	{
-		slug: "flutter-assistive-ui-components",
-		title: "Flutter Assistive UI Components",
-		date: "2026-04-01",
-		year: "2026",
-		image: "/projects/flutter-assistive-ui.png",
-		imageWidth: 939,
-		imageHeight: 668,
-		imageAlt:
-			"Flutter Assistive UI Components package preview showing accessibility-focused widgets",
-		url: "https://pub.dev/packages/flutter_assistive_ui_components",
-		repository: "thiagodalsanto/flutter_assistive_ui_components",
-		primaryLabel: "package",
-		technologies: ["Flutter", "Provider", "Shared Preferences"],
-		detail: makeDetail(flutterSections, {
+		slug: "easy-translation",
+		title: "EasyTranslation",
+		status: "ongoing",
+		technologies: [
+			"TypeScript",
+			"Speech-to-text",
+			"Prediction models",
+			"Voice preservation",
+			"Real-time audio",
+		],
+		detail: {
 			en: {
-				kind: "Open source · Flutter package",
+				kind: "Independent product · Ongoing",
 				description:
-					"A Flutter package of assistive components for interfaces used by people with fine motor difficulties.",
+					"A real-time translation engine for calls that keeps each speaker's voice — timbre, tone and delivery — intact.",
 				overview:
-					"A Flutter package of assistive components for interfaces used by people with fine motor difficulties. It provides larger, more touch-tolerant widgets that can be configured at runtime, with support for haptic feedback, visual feedback, activation delay and accessibility presets.",
+					"EasyTranslation translates speech while people are still talking. Prediction models anticipate the next words, voice models re-speak the translation in the speaker's own timbre and tone, and the result lands back in the call with almost no delay. The goal is simple: two people who do not share a language should still sound like themselves, not like a dubbing track.",
+				sections: [
+					{
+						title: "Real time by design",
+						items: [
+							"Streaming speech recognition instead of waiting for a full sentence.",
+							"Prediction models draft ahead so translation keeps pace with the call.",
+							"A low-latency audio pipeline built for live conversation.",
+							"Graceful degradation when the network or a model lags.",
+						],
+					},
+					{
+						title: "The voice stays yours",
+						items: [
+							"Keeps the original speaker's timbre, pitch and tone.",
+							"Prosody and delivery carried into the translated audio.",
+							"Per-speaker voice profiles for meetings and calls.",
+							"Works across languages without flattening personality.",
+						],
+					},
+					{
+						title: "Built for conversation",
+						items: [
+							"Turn-taking that respects interruptions and pauses.",
+							"Context carried across sentences, not word by word.",
+							"Session transcripts to review after the call.",
+							"Designed for meetings, support calls and interviews.",
+						],
+					},
+				],
 			},
 			pt: {
-				kind: "Open source · Pacote Flutter",
+				kind: "Produto independente · Em andamento",
 				description:
-					"Um pacote Flutter de componentes assistivos para interfaces usadas por pessoas com dificuldades motoras finas.",
+					"Um motor de tradução em tempo real para chamadas que preserva a voz de cada pessoa — timbre, tom e entonação.",
 				overview:
-					"Um pacote Flutter de componentes assistivos para interfaces usadas por pessoas com dificuldades motoras finas. Oferece widgets maiores e mais tolerantes ao toque, configuráveis em tempo de execução, com suporte a feedback háptico, feedback visual, atraso de ativação e presets de acessibilidade.",
+					"EasyTranslation traduz a fala enquanto as pessoas ainda estão falando. Modelos de predição antecipam as próximas palavras, modelos de voz revestem a tradução com o timbre e o tom do próprio falante, e o resultado chega à chamada quase sem atraso. O objetivo é simples: duas pessoas que não compartilham um idioma devem soar como elas mesmas, não como uma dublagem.",
+				sections: [
+					{
+						title: "Tempo real por princípio",
+						items: [
+							"Reconhecimento de fala em streaming, sem esperar a frase inteira.",
+							"Modelos de predição adiantam o rascunho para acompanhar a conversa.",
+							"Pipeline de áudio de baixa latência feito para fala ao vivo.",
+							"Degradação controlada quando a rede ou um modelo atrasa.",
+						],
+					},
+					{
+						title: "A voz continua sendo sua",
+						items: [
+							"Mantém timbre, altura e tom do falante original.",
+							"Prosódia e entonação preservadas no áudio traduzido.",
+							"Perfis de voz por participante para reuniões e chamadas.",
+							"Funciona entre idiomas sem apagar a personalidade.",
+						],
+					},
+					{
+						title: "Feito para conversa",
+						items: [
+							"Turnos de fala que respeitam interrupções e pausas.",
+							"Contexto entre frases, não tradução palavra por palavra.",
+							"Transcrição da sessão para revisar depois da chamada.",
+							"Pensado para reuniões, suporte e entrevistas.",
+						],
+					},
+				],
 			},
 			es: {
-				kind: "Open source · Paquete Flutter",
+				kind: "Producto independiente · En curso",
 				description:
-					"Un paquete Flutter de componentes asistivos para interfaces utilizadas por personas con dificultades motoras finas.",
+					"Un motor de traducción en tiempo real para llamadas que conserva la voz de cada persona: timbre, tono y entonación.",
 				overview:
-					"Un paquete Flutter de componentes asistivos para interfaces utilizadas por personas con dificultades motoras finas. Ofrece widgets más grandes y tolerantes al toque, configurables en tiempo de ejecución, con soporte para feedback háptico, feedback visual, retardo de activación y presets de accesibilidad.",
+					"EasyTranslation traduce el habla mientras las personas siguen hablando. Los modelos de predicción anticipan las siguientes palabras, los modelos de voz revisten la traducción con el timbre y el tono del propio hablante, y el resultado llega a la llamada casi sin retardo. El objetivo es simple: dos personas que no comparten idioma deben sonar como ellas mismas, no como un doblaje.",
+				sections: [
+					{
+						title: "Tiempo real por diseño",
+						items: [
+							"Reconocimiento de voz en streaming, sin esperar la frase completa.",
+							"Modelos de predicción redactan por delante para seguir la llamada.",
+							"Pipeline de audio de baja latencia pensado para conversación en vivo.",
+							"Degradación controlada cuando la red o un modelo se retrasan.",
+						],
+					},
+					{
+						title: "La voz sigue siendo tuya",
+						items: [
+							"Mantiene el timbre, la altura y el tono del hablante original.",
+							"Prosodia y entonación trasladadas al audio traducido.",
+							"Perfiles de voz por participante para reuniones y llamadas.",
+							"Funciona entre idiomas sin aplanar la personalidad.",
+						],
+					},
+					{
+						title: "Hecho para conversar",
+						items: [
+							"Turnos de palabra que respetan interrupciones y pausas.",
+							"Contexto entre frases, no traducción palabra por palabra.",
+							"Transcripción de la sesión para revisar tras la llamada.",
+							"Pensado para reuniones, soporte y entrevistas.",
+						],
+					},
+				],
 			},
 			zh: {
-				kind: "开源 · Flutter 包",
+				kind: "独立产品 · 进行中",
 				description:
-					"一个 Flutter 辅助组件包，面向精细动作困难用户所使用的界面。",
+					"面向通话的实时翻译引擎，保留每位说话者的音色、语气与表达方式。",
 				overview:
-					"一个 Flutter 辅助组件包，面向精细动作困难用户所使用的界面。它提供更大、更易触控的组件，可在运行时配置，并支持触觉反馈、视觉反馈、激活延迟和无障碍预设。",
+					"EasyTranslation 在人们还在说话时就完成翻译。预测模型提前推断接下来的内容，语音模型用说话者自己的音色和语气重新生成译文，结果几乎无延迟地回到通话中。目标很简单：两个语言不同的人，听起来仍应像他们自己，而不是像一条配音。",
+				sections: [
+					{
+						title: "为实时而生",
+						items: [
+							"流式语音识别，无需等待整句结束。",
+							"预测模型提前起草，让翻译跟上通话节奏。",
+							"面向实时对话的低延迟音频链路。",
+							"网络或模型延迟时的可控降级。",
+						],
+					},
+					{
+						title: "保留原本的声音",
+						items: [
+							"保留原说话者的音色、音高与语气。",
+							"韵律与表达方式延续到译文音频中。",
+							"为会议和通话提供每位参与者的声音档案。",
+							"跨语言工作，也不会抹平个性。",
+						],
+					},
+					{
+						title: "为对话而建",
+						items: [
+							"尊重打断与停顿的轮次控制。",
+							"跨句携带上下文，而非逐词翻译。",
+							"通话后可回看会话转录。",
+							"为会议、客服与面试场景设计。",
+						],
+					},
+				],
 			},
-		}),
+		},
 	},
 ];
 

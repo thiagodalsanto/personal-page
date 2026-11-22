@@ -9,8 +9,8 @@ export default function manifest(): MetadataRoute.Manifest {
 			"Software engineer specializing in web and mobile development.",
 		start_url: "/",
 		display: "standalone",
-		background_color: "#0A0A09",
-		theme_color: "#C22F0E",
+		background_color: "#EBE6DB",
+		theme_color: "#201F1B",
 		icons: [
 			{
 				src: "/icon.svg",

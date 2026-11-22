@@ -1,40 +1,36 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { ThemeProvider } from "next-themes";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import "../global.css";
 import { site } from "./lib/site";
 
 const sans = localFont({
-	src: "../public/fonts/InstrumentSans-Variable.ttf",
+	src: "../public/fonts/BricolageGrotesque-Variable.woff2",
 	variable: "--font-sans",
-	weight: "400 700",
+	weight: "200 800",
 	style: "normal",
-	display: "swap",
-});
-
-const display = localFont({
-	src: "../public/fonts/CalSans-SemiBold.ttf",
-	variable: "--font-display",
-	weight: "600",
-	style: "normal",
-	display: "swap",
-});
-
-const serif = localFont({
-	src: "../public/fonts/InstrumentSerif-Italic.ttf",
-	variable: "--font-serif",
-	weight: "400",
-	style: "italic",
 	display: "swap",
 });
 
 const mono = localFont({
-	src: "../public/fonts/JetBrainsMono-Variable.ttf",
+	src: [
+		{
+			path: "../public/fonts/DMMono-Light.woff2",
+			weight: "300",
+			style: "normal",
+		},
+		{
+			path: "../public/fonts/DMMono-Regular.woff2",
+			weight: "400",
+			style: "normal",
+		},
+		{
+			path: "../public/fonts/DMMono-Medium.woff2",
+			weight: "500",
+			style: "normal",
+		},
+	],
 	variable: "--font-mono",
-	weight: "100 800",
-	style: "normal",
 	display: "swap",
 });
 
@@ -71,7 +67,7 @@ export const metadata: Metadata = {
 			"Software engineer specializing in web and mobile development with React, Next.js, Angular, Flutter and React Native.",
 		images: [
 			{
-				url: `${site.url}/opengraph-image`,
+				url: `${site.url}/opengraph-image.png`,
 				width: 1200,
 				height: 630,
 				alt: "Thiago Dal Santo — Software Engineer",
@@ -83,7 +79,7 @@ export const metadata: Metadata = {
 		title: "Thiago Dal Santo — Software Engineer",
 		description:
 			"Software engineer specializing in web and mobile development with React, Next.js, Angular, Flutter and React Native.",
-		images: [`${site.url}/opengraph-image`],
+		images: [`${site.url}/opengraph-image.png`],
 	},
 	robots: {
 		index: true,
@@ -103,8 +99,8 @@ export const viewport: Viewport = {
 	width: "device-width",
 	initialScale: 1,
 	themeColor: [
-		{ media: "(prefers-color-scheme: light)", color: "#F2EFE7" },
-		{ media: "(prefers-color-scheme: dark)", color: "#0A0A09" },
+		{ media: "(prefers-color-scheme: light)", color: "#EBE6DB" },
+		{ media: "(prefers-color-scheme: dark)", color: "#1C1B18" },
 	],
 	colorScheme: "light dark",
 };
@@ -120,9 +116,7 @@ export default function RootLayout({
 		<html
 			lang="en"
 			suppressHydrationWarning
-			className={[sans.variable, display.variable, serif.variable, mono.variable].join(
-				" ",
-			)}
+			className={[sans.variable, mono.variable].join(" ")}
 		>
 			<head>
 				<script dangerouslySetInnerHTML={{ __html: localeScript }} />
@@ -136,8 +130,6 @@ export default function RootLayout({
 				>
 					{children}
 				</ThemeProvider>
-				<Analytics />
-				<SpeedInsights />
 			</body>
 		</html>
 	);

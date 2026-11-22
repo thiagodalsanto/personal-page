@@ -10,15 +10,15 @@ export function SiteFooter({
 	dict: Dictionary;
 }) {
 	return (
-		<footer className="border-t border-line/15">
-			<div className="shell flex flex-col gap-5 py-8 md:flex-row md:items-center md:justify-between">
+		<footer className="with-rail border-t border-line/15">
+			<div className="shell flex flex-col gap-4 py-7 md:flex-row md:items-center md:justify-between">
 				<p className="eyebrow text-muted">
-					© {new Date().getFullYear()} {site.name}
+					© {new Date().getFullYear()} {site.name} · {dict.hero.location}
 				</p>
-				<p className="text-xs text-muted">{dict.footer.designed}</p>
+				<p className="text-[11px] text-muted">{dict.footer.designed}</p>
 				<a
 					href={`${localeHref(lang)}#top`}
-					className="group inline-flex items-center gap-2 self-start font-mono text-[10px] uppercase tracking-[0.13em] text-muted transition-colors hover:text-ink md:self-auto"
+					className="group inline-flex items-center gap-2 self-start font-mono text-[9px] uppercase tracking-[0.13em] text-muted transition-colors hover:text-ink md:self-auto"
 				>
 					{dict.footer.backToTop}
 					<span className="grid h-7 w-7 place-items-center rounded-full border border-line/25 transition-colors group-hover:border-ink">

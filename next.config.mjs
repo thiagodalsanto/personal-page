@@ -6,6 +6,7 @@ const allowedDevOrigins = (process.env.NEXT_DEV_ALLOWED_ORIGINS ?? "")
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	poweredByHeader: false,
+	devIndicators: false,
 	...(allowedDevOrigins.length ? { allowedDevOrigins } : {}),
 	async redirects() {
 		return [

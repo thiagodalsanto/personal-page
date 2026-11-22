@@ -40,7 +40,7 @@ export function buildHomeMetadata(lang: Locale): Metadata {
 			description: dict.meta.description,
 			images: [
 				{
-					url: absoluteUrl("/opengraph-image"),
+					url: absoluteUrl("/opengraph-image.png"),
 					width: 1200,
 					height: 630,
 					alt: dict.meta.ogAlt,
@@ -51,7 +51,7 @@ export function buildHomeMetadata(lang: Locale): Metadata {
 			card: "summary_large_image",
 			title: dict.meta.title,
 			description: dict.meta.description,
-			images: [absoluteUrl("/opengraph-image")],
+			images: [absoluteUrl("/opengraph-image.png")],
 		},
 	};
 }
@@ -76,19 +76,26 @@ export function buildProjectMetadata(lang: Locale, project: Project): Metadata {
 			title: project.title,
 			description: detail.description,
 			images: [
-				{
-					url: absoluteUrl(project.image),
-					width: project.imageWidth,
-					height: project.imageHeight,
-					alt: project.imageAlt,
-				},
+				project.image
+					? {
+							url: absoluteUrl(project.image),
+							width: project.imageWidth,
+							height: project.imageHeight,
+							alt: project.imageAlt ?? project.title,
+						}
+					: {
+							url: absoluteUrl("/opengraph-image.png"),
+							width: 1200,
+							height: 630,
+							alt: project.title,
+						},
 			],
 		},
 		twitter: {
 			card: "summary_large_image",
 			title: project.title,
 			description: detail.description,
-			images: [absoluteUrl(project.image)],
+			images: [absoluteUrl(project.image ?? "/opengraph-image.png")],
 		},
 	};
 }

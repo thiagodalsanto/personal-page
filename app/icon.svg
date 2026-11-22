@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Thiago Dal Santo">
-	<rect width="64" height="64" rx="14" fill="#111110" />
-	<path d="M32 11v17M32 36v17M13 23l16 9M35 32l16 9M51 23l-16 9M29 32l-16 9" stroke="#C22F0E" stroke-width="3.2" stroke-linecap="round" />
-	<circle cx="32" cy="32" r="4.5" fill="#F2EFE7" />
+	<rect width="64" height="64" rx="12" fill="#201F1B" />
+	<text x="31" y="42" text-anchor="middle" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="27" font-weight="600" letter-spacing="-1.6" fill="#EBE6DB">TD</text>
+	<rect x="47" y="9" width="8" height="8" fill="#D88C63" />
 </svg>

@@ -22,6 +22,7 @@ export const site = {
 	url: "https://thiagodalsanto.pt",
 	name: "Thiago Dal Santo",
 	role: "Software Engineer",
+	location: "Lisbon, Portugal",
 	email: "thiagodalsantodaluz@gmail.com",
 	github: "https://github.com/thiagodalsanto",
 	linkedin: "https://www.linkedin.com/in/thiagodalsanto",
@@ -30,7 +31,12 @@ export const site = {
 	keywords: [
 		"Thiago Dal Santo",
 		"software engineer",
-		"frontend developer",
+		"AI integration",
+		"AI engineering",
+		"LLM integration",
+		"OpenAI",
+		"Anthropic",
+		"ElevenLabs",
 		"web developer",
 		"mobile developer",
 		"React",
@@ -41,7 +47,7 @@ export const site = {
 		"TypeScript",
 		"Portugal",
 		"UTFPR",
-		"IPS",
+		"UNIPS",
 	],
 };
 

@@ -37,7 +37,7 @@ export function HomeStructuredData({
 		alumniOf: [
 			{
 				"@type": "CollegeOrUniversity",
-				name: "Polytechnic Institute of Setúbal (IPS)",
+				name: "Universidade Politécnica de Setúbal (UNIPS)",
 			},
 			{
 				"@type": "CollegeOrUniversity",
@@ -80,7 +80,7 @@ export function HomeStructuredData({
 				name: project.title,
 				description: project.detail[lang].description,
 				url: absoluteUrl(localeHref(lang, `projects/${project.slug}`)),
-				image: absoluteUrl(project.image),
+				...(project.image ? { image: absoluteUrl(project.image) } : {}),
 				keywords: project.technologies.join(", "),
 				author: { "@id": `${site.url}/#person` },
 			},

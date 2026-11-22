@@ -15,9 +15,11 @@ import { cn } from "../lib/cn";
 export function LanguageSwitcher({
 	lang,
 	label,
+	placement = "down",
 }: {
 	lang: Locale;
 	label: string;
+	placement?: "up" | "down";
 }) {
 	const pathname = usePathname() ?? "/";
 	const [open, setOpen] = useState(false);
@@ -76,7 +78,12 @@ export function LanguageSwitcher({
 			{open && (
 				<div
 					role="menu"
-					className="absolute right-0 top-[calc(100%+10px)] z-[90] w-48 border border-line/20 bg-paper p-1 shadow-[0_24px_60px_rgba(0,0,0,0.16)]"
+					className={cn(
+						"absolute z-[90] w-52 border border-line/20 bg-paper p-1 shadow-[0_24px_60px_rgba(0,0,0,0.16)]",
+						placement === "up"
+							? "bottom-[calc(100%+10px)] left-0"
+							: "top-[calc(100%+10px)] right-0",
+					)}
 				>
 					{locales.map((locale) => (
 						<Link
