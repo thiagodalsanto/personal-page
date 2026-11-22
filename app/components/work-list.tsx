@@ -13,7 +13,7 @@ export function WorkList({
 	dict: Dictionary;
 }) {
 	return (
-		<section id="work" className="shell section border-t border-line/15">
+		<section id="work" className="shell section band border-t border-line/15">
 			<SectionHead
 				index="03"
 				label={dict.work.label}
@@ -21,14 +21,14 @@ export function WorkList({
 				aside={dict.work.subtitle}
 			/>
 
-			<div className="grid gap-3 md:grid-cols-2">
+			<div className="grid gap-3 md:grid-cols-5">
 				{projects.map((project, index) => {
 					const detail = project.detail[lang];
 					return (
 						<Link
 							key={project.slug}
 							href={localeHref(lang, `projects/${project.slug}`)}
-							className="work-item group"
+							className={`work-item group ${index === 0 ? "md:col-span-3" : "md:col-span-2"}`}
 							data-reveal
 							data-reveal-delay={index * 90}
 						>
@@ -40,6 +40,10 @@ export function WorkList({
 										: dict.work.shipped}
 								</span>
 							</div>
+
+							<span className="work-ghost" aria-hidden="true">
+								0{index + 1}
+							</span>
 
 							<h3 className="work-title mt-8">{project.title}</h3>
 							<p className="mt-3 max-w-md text-sm leading-relaxed text-muted">

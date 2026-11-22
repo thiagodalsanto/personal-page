@@ -56,7 +56,7 @@ export function Cover({ dict }: { dict: Dictionary }) {
 							</div>
 						</div>
 
-						<aside className="rise-late">
+						<aside className="rise-late panel hero-panel">
 						<dl className="fact-list">
 							{dict.about.stats.map((stat) => (
 								<div key={stat.label} className="fact-row">

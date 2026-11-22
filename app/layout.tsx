@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { ThemeProvider } from "next-themes";
 import "../global.css";
+import { SiteCursor } from "./components/site-cursor";
 import { site } from "./lib/site";
 
 const sans = localFont({
@@ -99,8 +100,8 @@ export const viewport: Viewport = {
 	width: "device-width",
 	initialScale: 1,
 	themeColor: [
-		{ media: "(prefers-color-scheme: light)", color: "#EBE6DB" },
-		{ media: "(prefers-color-scheme: dark)", color: "#1C1B18" },
+		{ media: "(prefers-color-scheme: light)", color: "#ECE7DD" },
+		{ media: "(prefers-color-scheme: dark)", color: "#191815" },
 	],
 	colorScheme: "light dark",
 };
@@ -129,6 +130,7 @@ export default function RootLayout({
 					disableTransitionOnChange
 				>
 					{children}
+					<SiteCursor />
 				</ThemeProvider>
 			</body>
 		</html>

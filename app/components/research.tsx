@@ -50,7 +50,7 @@ export function Research({ dict }: { dict: Dictionary }) {
 
 			<section
 				id="publications"
-				className="shell section border-t border-line/15"
+				className="shell section band border-t border-line/15"
 			>
 				<SectionHead
 					index="05"

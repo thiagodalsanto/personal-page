@@ -23,10 +23,7 @@ export function ContactPanel({ dict }: { dict: Dictionary }) {
 	];
 
 	return (
-		<section
-			id="contact"
-			className="border-t border-line/15 bg-surface/35"
-		>
+		<section id="contact" className="panel contact-panel">
 			<div className="shell py-16 md:py-24">
 				<p className="eyebrow text-muted">06 / {dict.contact.label}</p>
 
