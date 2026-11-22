@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { ThemeProvider } from "next-themes";
 import "../global.css";
+import { PageRail } from "./components/page-rail";
 import { SiteCursor } from "./components/site-cursor";
 import { site } from "./lib/site";
 
@@ -130,6 +131,7 @@ export default function RootLayout({
 					disableTransitionOnChange
 				>
 					{children}
+					<PageRail />
 					<SiteCursor />
 				</ThemeProvider>
 			</body>

@@ -98,32 +98,14 @@
 		display: block;
 	}
 
+	/* The page rail replaces the native bar so both edges share one language. */
+	html {
+		scrollbar-width: none;
+	}
+
 	::-webkit-scrollbar {
-		width: 12px;
-		height: 12px;
-	}
-
-	::-webkit-scrollbar-track {
-		background-color: rgb(var(--paper));
-		border-left: 1px solid rgb(var(--line) / 0.1);
-	}
-
-	::-webkit-scrollbar-thumb {
-		background-color: rgb(var(--ink) / 0.26);
-		border: 3px solid transparent;
-		background-clip: content-box;
-		border-radius: 9999px;
-	}
-
-	::-webkit-scrollbar-thumb:hover {
-		background-color: rgb(var(--accent) / 0.85);
-	}
-
-	@supports (-moz-appearance: none) {
-		html {
-			scrollbar-width: thin;
-			scrollbar-color: rgb(var(--ink) / 0.3) rgb(var(--paper));
-		}
+		width: 0;
+		height: 0;
 	}
 }
 
@@ -904,6 +886,48 @@
 		transform-origin: top;
 		background-color: rgb(var(--accent));
 		will-change: transform;
+	}
+
+	.page-rail {
+		position: fixed;
+		inset-block: 0;
+		right: 0;
+		z-index: 90;
+		width: 0.75rem;
+		pointer-events: none;
+	}
+
+	.page-rail-track,
+	.page-rail-fill {
+		position: absolute;
+		inset-block: 0;
+		right: 0;
+		width: 1px;
+		transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+	}
+
+	.page-rail-track {
+		background-color: rgb(var(--line) / 0.1);
+	}
+
+	.page-rail-fill {
+		transform: scaleY(0);
+		transform-origin: top;
+		background-color: rgb(var(--accent));
+		will-change: transform;
+	}
+
+	@media (hover: hover) and (pointer: fine) {
+		.page-rail {
+			pointer-events: auto;
+		}
+
+		.page-rail:hover .page-rail-track,
+		.page-rail:hover .page-rail-fill,
+		.page-rail[data-dragging="true"] .page-rail-track,
+		.page-rail[data-dragging="true"] .page-rail-fill {
+			width: 3px;
+		}
 	}
 
 	.copy-email {
