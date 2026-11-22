@@ -18,6 +18,8 @@ export function Research({ dict }: { dict: Dictionary }) {
 						<article
 							key={item.course}
 							className="card education-card flex flex-col p-6 md:p-7"
+							data-reveal
+							data-reveal-delay={index * 80}
 						>
 							<div className="flex items-start justify-between gap-4">
 								<span className="font-mono text-[10px] tracking-[0.1em] text-accent">
@@ -58,13 +60,15 @@ export function Research({ dict }: { dict: Dictionary }) {
 				/>
 
 				<div>
-					{dict.publications.items.map((publication) => (
+					{dict.publications.items.map((publication, index) => (
 						<a
 							key={publication.url}
 							href={publication.url}
 							target="_blank"
 							rel="noreferrer"
 							className="pub-item group"
+							data-reveal
+							data-reveal-delay={Math.min(index, 4) * 60}
 						>
 							<span className="pub-year">{publication.date}</span>
 							<span>

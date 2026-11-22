@@ -236,6 +236,10 @@ export function SiteHeader({
 						</a>
 					</div>
 				</div>
+
+				<div className="rail-meter" aria-hidden="true">
+					<span />
+				</div>
 			</aside>
 
 			{menuOpen && (
@@ -264,6 +268,7 @@ export function SiteHeader({
 								href={navigationHref(item.id)}
 								onClick={() => setMenuOpen(false)}
 								className="nav-overlay-link"
+								style={{ animationDelay: `${index * 45}ms` }}
 							>
 								<span>{item.label}</span>
 								<span className="eyebrow text-muted">0{index + 1}</span>

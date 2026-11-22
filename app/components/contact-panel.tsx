@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import type { Dictionary } from "../lib/i18n";
 import { site } from "../lib/site";
+import { CopyEmail } from "./copy-email";
 
 export function ContactPanel({ dict }: { dict: Dictionary }) {
 	const socials = [
@@ -30,7 +31,7 @@ export function ContactPanel({ dict }: { dict: Dictionary }) {
 				<p className="eyebrow text-muted">06 / {dict.contact.label}</p>
 
 				<div className="mt-7 grid gap-10 lg:grid-cols-12 lg:gap-8">
-					<div className="lg:col-span-7">
+					<div className="lg:col-span-7" data-reveal>
 						<h2 className="display text-[clamp(2.7rem,6.5vw,5.7rem)]">
 							{dict.contact.titleLine1}
 							<br />
@@ -40,7 +41,11 @@ export function ContactPanel({ dict }: { dict: Dictionary }) {
 						</h2>
 					</div>
 
-					<div className="flex flex-col justify-end lg:col-span-4 lg:col-start-9">
+					<div
+						className="flex flex-col justify-end lg:col-span-4 lg:col-start-9"
+						data-reveal
+						data-reveal-delay="110"
+					>
 						<p className="max-w-sm text-sm leading-relaxed text-muted">
 							{dict.contact.text}
 						</p>
@@ -57,12 +62,22 @@ export function ContactPanel({ dict }: { dict: Dictionary }) {
 					</div>
 				</div>
 
-				<a
-					href={`mailto:${site.email}`}
-					className="contact-email mt-14 block w-fit border-b border-line/20 pb-2"
+				<div
+					className="mt-14 flex flex-wrap items-end gap-x-5 gap-y-4"
+					data-reveal
 				>
-					{site.email}
-				</a>
+					<a
+						href={`mailto:${site.email}`}
+						className="contact-email block w-fit border-b border-line/20 pb-2"
+					>
+						{site.email}
+					</a>
+					<CopyEmail
+						email={site.email}
+						label={dict.contact.copyEmail}
+						copiedLabel={dict.contact.copied}
+					/>
+				</div>
 
 				<div className="mt-14 grid gap-px border-t border-line/15 pt-6 sm:grid-cols-3">
 					{socials.map((social) => (

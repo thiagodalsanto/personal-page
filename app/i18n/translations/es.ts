@@ -292,6 +292,8 @@ export const es = {
 		titleLine2: "que valga la pena usar.",
 		text: "¿Tienes un producto, un equipo o una idea que merece la pena? Mi bandeja de entrada está abierta.",
 		emailCta: "Iniciar una conversación",
+		copyEmail: "Copiar correo",
+		copied: "Copiado",
 		socials: {
 			github: {
 				label: "GitHub",

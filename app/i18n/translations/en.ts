@@ -292,6 +292,8 @@ export const en = {
 		titleLine2: "worth using.",
 		text: "Have a product, a team or an idea worth pursuing? My inbox is open.",
 		emailCta: "Start a conversation",
+		copyEmail: "Copy email",
+		copied: "Copied",
 		socials: {
 			github: {
 				label: "GitHub",

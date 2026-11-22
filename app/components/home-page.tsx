@@ -7,6 +7,7 @@ import { LocaleEffect } from "./locale-effect";
 import { Profile } from "./profile";
 import { Research } from "./research";
 import { SiteFooter } from "./site-footer";
+import { SiteMotion } from "./site-motion";
 import { SiteHeader } from "./site-header";
 import { HomeStructuredData } from "./structured-data";
 import { WorkList } from "./work-list";
@@ -33,6 +34,7 @@ export function HomePage({ lang }: { lang: Locale }) {
 			</main>
 
 			<SiteFooter lang={lang} dict={dict} />
+			<SiteMotion />
 			<LocaleEffect lang={lang} />
 			<HomeStructuredData lang={lang} dict={dict} />
 		</>

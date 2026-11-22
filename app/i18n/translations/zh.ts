@@ -282,6 +282,8 @@ export const zh = {
 		titleLine2: "真正好用的产品。",
 		text: "有值得推进的产品、团队或想法？欢迎随时联系。",
 		emailCta: "开始对话",
+		copyEmail: "复制邮箱",
+		copied: "已复制",
 		socials: {
 			github: {
 				label: "GitHub",

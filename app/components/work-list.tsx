@@ -29,6 +29,8 @@ export function WorkList({
 							key={project.slug}
 							href={localeHref(lang, `projects/${project.slug}`)}
 							className="work-item group"
+							data-reveal
+							data-reveal-delay={index * 90}
 						>
 							<div className="flex items-center justify-between gap-4">
 								<span className="work-num">0{index + 1}</span>

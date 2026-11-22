@@ -14,7 +14,7 @@ export function Profile({ dict }: { dict: Dictionary }) {
 			/>
 
 			<div className="grid gap-10 lg:grid-cols-12 lg:gap-10">
-				<div className="lg:col-span-7">
+				<div className="lg:col-span-7" data-reveal>
 					<p className="profile-lead">{dict.about.paragraphs[0]}</p>
 					<p className="mt-5 max-w-2xl text-sm leading-relaxed text-muted">
 						{dict.about.paragraphs[1]}
@@ -40,7 +40,11 @@ export function Profile({ dict }: { dict: Dictionary }) {
 					</div>
 				</div>
 
-				<aside className="lg:col-span-4 lg:col-start-9">
+				<aside
+					className="lg:col-span-4 lg:col-start-9"
+					data-reveal
+					data-reveal-delay="110"
+				>
 					<dl className="fact-list">
 						<div className="fact-row">
 							<dt>{dict.about.basedLabel}</dt>
