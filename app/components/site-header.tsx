@@ -80,12 +80,13 @@ export function SiteHeader({
 
 		const observer = new IntersectionObserver(
 			(entries) => {
-				const visible = entries
-					.filter((entry) => entry.isIntersecting)
-					.sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-				if (visible) setActive(visible.target.id);
+				entries.forEach((entry) => {
+					if (!entry.isIntersecting) return;
+					const id = entry.target.id;
+					setActive((current) => (current === id ? current : id));
+				});
 			},
-			{ rootMargin: "-24% 0px -58% 0px", threshold: [0, 0.1, 0.5] },
+			{ rootMargin: "-32% 0px -58% 0px", threshold: 0 },
 		);
 
 		sections.forEach((section) => observer.observe(section));

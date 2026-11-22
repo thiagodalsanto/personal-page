@@ -7,8 +7,7 @@ export function Cover({ dict }: { dict: Dictionary }) {
 	const current = dict.experience.items[0];
 
 	return (
-		<section className="relative overflow-hidden" data-spotlight>
-			<div className="cover-glow" aria-hidden="true" />
+		<section className="relative overflow-hidden">
 			<div className="shell pb-14 pt-9 md:pb-20 md:pt-14 lg:pt-12">
 				<div className="rise flex flex-wrap items-center justify-between gap-3 border-b border-line/15 pb-4">
 					<p className="eyebrow text-muted">{dict.hero.eyebrow}</p>

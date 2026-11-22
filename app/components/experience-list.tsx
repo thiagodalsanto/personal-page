@@ -13,12 +13,7 @@ export function ExperienceList({ dict }: { dict: Dictionary }) {
 
 			<div className="exp-list">
 				{dict.experience.items.map((item, index) => (
-					<article
-						key={`${item.company}-${item.period}`}
-						className="exp-item"
-						data-reveal
-						data-reveal-delay={Math.min(index, 3) * 70}
-					>
+					<article key={`${item.company}-${item.period}`} className="exp-item">
 						<div className="exp-meta">
 							<span className="exp-period">{item.period}</span>
 							{index === 0 ? (

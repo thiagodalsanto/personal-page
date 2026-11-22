@@ -36,7 +36,7 @@ export function SiteMotion() {
 					observer.unobserve(entry.target);
 				});
 			},
-			{ rootMargin: "0px 0px -8% 0px", threshold: 0.01 },
+			{ rootMargin: "0px 0px 2% 0px", threshold: 0 },
 		);
 
 		targets.forEach((element) => observer.observe(element));
@@ -45,17 +45,19 @@ export function SiteMotion() {
 	}, []);
 
 	useEffect(() => {
-		const root = document.documentElement;
+		const bar = document.querySelector<HTMLElement>(".rail-meter span");
+		if (!bar) return;
+
 		let frame = 0;
+		let last = -1;
 
 		const paint = () => {
 			frame = 0;
-			const span = root.scrollHeight - window.innerHeight;
-			const progress = span > 0 ? window.scrollY / span : 0;
-			root.style.setProperty(
-				"--scroll-progress",
-				Math.min(1, Math.max(0, progress)).toFixed(4),
-			);
+			const span = document.documentElement.scrollHeight - window.innerHeight;
+			const progress = span > 0 ? Math.min(1, Math.max(0, window.scrollY / span)) : 0;
+			if (Math.abs(progress - last) < 0.001) return;
+			last = progress;
+			bar.style.transform = `scaleY(${progress.toFixed(4)})`;
 		};
 
 		const request = () => {
@@ -70,38 +72,6 @@ export function SiteMotion() {
 		return () => {
 			window.removeEventListener("scroll", request);
 			window.removeEventListener("resize", request);
-			if (frame) window.cancelAnimationFrame(frame);
-			root.style.removeProperty("--scroll-progress");
-		};
-	}, []);
-
-	useEffect(() => {
-		const cover = document.querySelector<HTMLElement>("[data-spotlight]");
-		if (!cover) return;
-		if (window.matchMedia("(hover: none)").matches) return;
-
-		let frame = 0;
-		let nextX = 0;
-		let nextY = 0;
-
-		const paint = () => {
-			frame = 0;
-			cover.style.setProperty("--mx", `${nextX}%`);
-			cover.style.setProperty("--my", `${nextY}%`);
-		};
-
-		const onMove = (event: PointerEvent) => {
-			const rect = cover.getBoundingClientRect();
-			if (!rect.width || !rect.height) return;
-			nextX = ((event.clientX - rect.left) / rect.width) * 100;
-			nextY = ((event.clientY - rect.top) / rect.height) * 100;
-			if (!frame) frame = window.requestAnimationFrame(paint);
-		};
-
-		cover.addEventListener("pointermove", onMove);
-
-		return () => {
-			cover.removeEventListener("pointermove", onMove);
 			if (frame) window.cancelAnimationFrame(frame);
 		};
 	}, []);
